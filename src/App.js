@@ -2,13 +2,26 @@ import React from 'react';
 import { Home } from './components'
 import './App.scss';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
 
 
 function App() {
   return (
-    <div className="App">
-        <Home/>
-    </div>
+      <Router>
+          <Switch>
+            <Route path={'/'}>
+                <Home/>
+            </Route>
+
+
+
+          </Switch>
+      </Router>
   );
 }
 

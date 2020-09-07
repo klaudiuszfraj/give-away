@@ -1,0 +1,46 @@
+.hero{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  .hero__img{
+    width: 45%;
+    height: 100%;
+    background-image: url("../../../assets/Home-Hero-Image.jpg");
+    background-size: cover;
+    background-position: right;
+  }
+  .hero__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+      text-align: center;
+      font-size: 38px;
+      color: #3C3C3C;
+    }
+    svg{
+      margin: 30px 0 60px 0;
+    }
+    .hero__buttons{
+      color: #3C3C3C;
+      width: 100%;
+      font-weight: lighter;
+      display: flex;
+      justify-content: space-evenly;
+      button{
+        background-color: transparent;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: lighter;
+        font-size: 36px;
+        max-width: 200px;
+        border: 0.75px solid #3C3C3C;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+}

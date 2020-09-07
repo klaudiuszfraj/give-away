@@ -1,0 +1,27 @@
+.stats{
+  height: 380px;
+  background-color: #FAD648;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url("../../../assets/3 Columns Background.png");
+  div{
+    text-align: center;
+    max-width: 350px;
+    h1{
+      font-size: 90px;
+      color: #5E5322;
+      font-weight: lighter;
+    }
+    h2{
+      text-transform: uppercase;
+      font-size: 18px;
+      color: #3C3C3C;
+      margin: 20px 0;
+    }
+    p{
+      color: #3C3C3C;
+      font-family: 'Merriweather', serif;
+    }
+  }
+}

@@ -4,21 +4,25 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
-  button{
-    font-size: 14px;
-    color: #737373;
-    padding: 9px 10px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    //color: $color-light-grey;
-  //  todo:: import kolorów z main
-    &:last-child{
-      border: 0.75px solid #5E5322;
-      margin-left: 20px;
+  div{
+    a{
+      text-decoration: none;
+      font-size: 14px;
+      color: #737373;
+      padding: 9px 10px;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      //color: $color-light-grey;
+      //  todo:: import kolorów z main
+      &:last-child{
+        border: 0.75px solid #5E5322;
+        margin-left: 20px;
+      }
     }
   }
+
   nav{
     a{
       cursor: pointer;

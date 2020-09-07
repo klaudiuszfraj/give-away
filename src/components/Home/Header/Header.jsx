@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import { Link as UserLinks } from 'react-router-dom';
 import style from './Header.module.scss';
 
 function Header() {
     return (
         <header className={style.header}>
             <div>
-                <button>Zaloguj</button>
-                <button>Załóż konto</button>
+                <UserLinks to={'/logowanie'}>Zaloguj</UserLinks>
+                <UserLinks to={'/rejestracja'}>Załóż konto</UserLinks>
             </div>
             <nav>
                 <Link to={'start'} smooth={true} duration={1000}>Start</Link>

@@ -1,3 +1,12 @@
 export { default as Home } from './Home/Home';
+
+
+export { default as Header } from './Home/Header/Header';
+export { default as Hero } from './Home/Hero/Hero';
+export { default as Stats } from './Home/Stats/Starts';
+export { default as FourSteps } from './Home/FourSteps/FourSteps';
+export { default as About } from './Home/About/About';
+export { default as WhoWeHelp } from './Home/WhoWeHelp/WhoWeHelp';
+export { default as Contact } from './Home/Contact/Contact';
 export { default as Footer } from './Home/Footer/Footer';
 

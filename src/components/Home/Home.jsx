@@ -1,10 +1,16 @@
 import React from 'react';
-import { Footer } from "../index";
+import { Header, Hero, Stats, FourSteps, About, WhoWeHelp, Contact, Footer } from "../index";
 
 function Home() {
  return (
   <div>
-      <h1>Home</h1>
+      <Header/>
+      <Hero/>
+      <Stats/>
+      <FourSteps/>
+      <About/>
+      <WhoWeHelp/>
+      <Contact/>
       <Footer/>
   </div>
  );

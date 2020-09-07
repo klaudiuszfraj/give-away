@@ -35,12 +35,13 @@
         text-align: center;
         background-color: transparent;
         font-family: 'Open Sans', sans-serif;
-        font-weight: lighter;
         font-size: 36px;
-        max-width: 200px;
+        max-width: 240px;
         border: 0.75px solid #3C3C3C;
         outline: none;
         cursor: pointer;
+        text-transform: uppercase;
+        padding: 10px 0;
       }
     }
   }

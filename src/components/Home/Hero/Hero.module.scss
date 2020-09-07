@@ -24,12 +24,14 @@
       margin: 30px 0 60px 0;
     }
     .hero__buttons{
-      color: #3C3C3C;
       width: 100%;
-      font-weight: lighter;
       display: flex;
       justify-content: space-evenly;
-      button{
+      a{
+        font-weight: lighter;
+        color: #3C3C3C;
+        text-decoration: none;
+        text-align: center;
         background-color: transparent;
         font-family: 'Open Sans', sans-serif;
         font-weight: lighter;

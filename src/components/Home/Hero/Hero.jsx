@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Hero.module.scss';
-import HeroImg from '../../../assets/Home-Hero-Image.jpg';
+import { Link } from "react-router-dom";
 import { ReactComponent as Decoration } from '../../../assets/Decoration.svg';
 
 function Hero() {
@@ -11,8 +11,8 @@ function Hero() {
             <h1>Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
             <Decoration/>
             <div className={style.hero__buttons}>
-                <button>Oddaj rzeczy</button>
-                <button>Zorganizuj zbiórję</button>
+                <Link to={'/logowanie'}>Oddaj rzeczy</Link>
+                <Link to={'/logowanie'}>Zorganizuj zbiórję</Link>
             </div>
             </div>
         </section>

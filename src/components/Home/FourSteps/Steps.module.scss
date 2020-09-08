@@ -22,4 +22,21 @@
     text-align: center;
     align-self: stretch;
   }
+  .link{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: lighter;
+      font-size: 36px;
+      max-width: 130px;
+      text-align: center;
+      color: $color-dark-gray;
+      padding: 10px 30px;
+      border: 0.75px solid $color-dark-gray;
+    }
+  }
 }

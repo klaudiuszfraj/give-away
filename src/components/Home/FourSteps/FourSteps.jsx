@@ -7,6 +7,7 @@ import shirt from "../../../assets/Icon-1.svg";
 import bag from "../../../assets/Icon-2.svg";
 import scope from "../../../assets/Icon-3.svg";
 import circle from "../../../assets/Icon-4.svg";
+import {Link} from "react-router-dom";
 
 
 function FourSteps() {
@@ -35,13 +36,15 @@ function FourSteps() {
 
 
     return (
-        <section className={style.fourSteps}>
+        <section className={style.fourSteps} id={'FourSteps'}>
             <h3 className={style.fourSteps__header}>Wystarczą 4 proste kroki</h3>
             <Decoration className={style.separator}/>
             <div className={style.items}>
                 {items.map(item=>(<StepItem img={item.img} header={item.header} text={item.text}/> ))}
             </div>
-
+            <div className={style.link}>
+                <Link to={'/logowanie'}>Oddaj rzeczy</Link>
+            </div>
         </section>
     );
 }

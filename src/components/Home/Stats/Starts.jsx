@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './Stats.module.scss'
 
-function Starts() {
-    const [givenBags, setGivenBags] = useState('10');
-    const [organizations, setOrganizations] = useState('10');
-    const [collection, setCollection] = useState('10');
-
+function Starts({givenBags=10, organizations=9, collection=88}) {
 
     return (
         <section className={style.stats}>

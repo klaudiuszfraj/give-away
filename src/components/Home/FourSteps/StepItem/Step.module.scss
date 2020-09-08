@@ -1,0 +1,23 @@
+@import "src/scss/main";
+.StepItem{
+  color: $color-dark-gray;
+  max-width: 130px;
+  h3{
+    font-size: 18px;
+    margin: 15px 0;
+  }
+  p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &::before{
+      content: "";
+      display: block;
+      width: 70%;
+      border: 0.5px solid $color-dark-gray;
+      margin-bottom: 10px;
+    }
+  }
+
+}

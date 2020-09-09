@@ -13,21 +13,25 @@ import {Link} from "react-router-dom";
 function FourSteps() {
     const items = [
         {
+            id:1,
             img: shirt,
             header: 'Wybierz rzeczy',
             text: 'ubrania zabawki sprzęt i inne'
         },
         {
+            id:2,
             img: bag,
             header: 'Spakuj je',
             text: 'skorzystaj z worków na śmieci'
         },
         {
+            id:3,
             img: scope,
             header: 'Zdecyduj koumu chesz pomóc',
             text: 'wybierz zaufan miejsce'
         },
         {
+            id:4,
             img: circle,
             header: 'Zamów kuriera',
             text: 'kurier przyjedzie w dogodnym terminie'
@@ -40,7 +44,7 @@ function FourSteps() {
             <h3 className={style.fourSteps__header}>Wystarczą 4 proste kroki</h3>
             <Decoration className={style.separator}/>
             <div className={style.items}>
-                {items.map(item=>(<StepItem img={item.img} header={item.header} text={item.text}/> ))}
+                {items.map(item=>(<StepItem key={item.id} img={item.img} header={item.header} text={item.text}/> ))}
             </div>
             <div className={style.link}>
                 <Link to={'/logowanie'}>Oddaj rzeczy</Link>

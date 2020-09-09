@@ -1,9 +1,9 @@
 import React from 'react';
-
+import style from './Option.module.scss';
 
 function Option({title, classN}) {
  return (
-  <button>
+  <button className={style.btn}>
       {title}
   </button>
  );

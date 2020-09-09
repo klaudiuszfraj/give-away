@@ -1,13 +1,82 @@
 @import "../../../scss/main.scss";
 
-.Contact{
+.Contact {
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
 
-  .Contact__img{
-
+  .Contact__img {
+    background-image: url("../../../assets/Background-Contact-Form.jpg");
+    width: 60%;
+    background-size: cover;
+    background-position: top;
+    opacity: 0.3;
   }
 
-  .Contact__container{
+  .Contact__container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-dark-gray;
+    text-align: center;
+    h3{
+      font-size: 38px;
+    }
+    svg{
+      margin: 30px 0;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      .Contact__userInfo{
+        display: flex;
+        justify-content: space-between;
+        label{
+          margin: 10px 0;
+        }
+        div{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 30px;
+          input{
+            border: none;
+            border-bottom: 0.75px solid $color-dark-gray;
+            outline: none;
+            padding-top: 20px;
 
-
+          }
+        }
+      }
+      .Contact__userMessage{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        textarea{
+          border: none;
+          border-bottom: 0.75px solid $color-dark-gray;
+          outline: none;
+          resize: none;
+          width: 100%;
+          padding-top: 20px;
+        }
+      }
+      button{
+        margin-top: 50px;
+        background-color: transparent;
+        font-size: 18px;
+        font-family: $font-base;
+        font-weight: lighter;
+        padding: 13px 52px;
+        align-self: flex-end;
+        border: 0.75px solid $color-dark-gray;
+        outline: none;
+      }
+    }
   }
 }

@@ -8,7 +8,7 @@
   color: $color-dark-gray;
 
   .WhoWeHelp__container {
-    max-width: 1344px;
+    width: 100%;
     margin: 30px 5%;
     display: flex;
     flex-direction: column;
@@ -46,9 +46,8 @@
 
       }
     }
-  }
-
-  .style.WhoWeHelp__list {
-
+    .WhoWeHelp__list {
+      align-self: stretch;
+    }
   }
 }

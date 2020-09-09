@@ -1,4 +1,31 @@
 @import "../../../../scss/main.scss";
 .ListItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-alt;
+  font-weight: lighter;
+  padding:30px 0;
+  //todo:: Merriweather czciąka szeryfowa?
+  &:nth-child(2){
+    border-top: 0.75px solid $color-dark-gray;
+    border-bottom: 0.75px solid $color-dark-gray;
+  }
+  .ListItem__mainInfo{
+    h3{
+      font-size: 26px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+  .ListItem__details{
+    width: 30%;
+    p{
+      font-size: 18px;
+      font-style: italic;
+      padding-right: 2%;
+    }
+  }
 
 }

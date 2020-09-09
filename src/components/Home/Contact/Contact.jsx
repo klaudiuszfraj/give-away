@@ -18,16 +18,16 @@ function Contact() {
                         <div className={style.Contact__userInfo}>
                             <div>
                                 <label htmlFor="name">Wpisz swoje imię</label>
-                                <input type="text" id={'name'} value={userName} onChange={e=>setUserName(e.target.value)}/>
+                                <input type="text" id={'name'} value={userName} placeholder={'Krzysztof'} onChange={e=>setUserName(e.target.value)}/>
                             </div>
                             <div>
                                 <label htmlFor="email">Wpisz swój email</label>
-                                <input type="text" id={'email'} value={userEmail} onChange={e=>setUserEmail(e.target.value)}/>
+                                <input type="text" id={'email'} value={userEmail} placeholder={'abc@xyz.pl'} onChange={e=>setUserEmail(e.target.value)}/>
                             </div>
                         </div>
                         <div className={style.Contact__userMessage}>
                             <label htmlFor="message">Wpisz swoją wiadomość</label>
-                            <textarea name="message" id="message" cols="30" rows="10" value={userMessage} onChange={e=>setUserMessage(e.target.value)}></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" value={userMessage} placeholder={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'} onChange={e=>setUserMessage(e.target.value)}/>
                         </div>
                         <button>Wyślij</button>
                     </form>

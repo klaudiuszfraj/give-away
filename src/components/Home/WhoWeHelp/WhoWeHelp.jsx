@@ -25,6 +25,11 @@ function WhoWeHelp() {
                     <ListItem type={'Fundacja'} header={'Dbam o zdrowie'} details={'lorem lorem lorem lorem lorem lorem lorem'} items={'lorem lorem lorem lorem'}/>
                     <ListItem type={'Fundacja'} header={'Dbam o zdrowie'} details={'lorem lorem lorem lorem lorem lorem lorem'} items={'lorem lorem lorem lorem'}/>
                 </div>
+                <div className={style.WhoWeHelp__pages}>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
 
             </div>
         </section>

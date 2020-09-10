@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './Whowehelp.module.scss'
 import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 import Option from "./Option/Option";
 import ListItem from "./ListItem/ListItem";
+import {fetchItemList} from "../../../API";
 
 function WhoWeHelp() {
+    const [itemList, setItemList] = useState([]);
+    useEffect(()=>{
+        const fetchList = async ()=>{
+            const itemList = await fetchItemList();
+            setItemList(itemList);
+        }
+        fetchList();
+    },[])
+
+
+
     return (
         <section className={style.WhoWeHelp} id={'foundation'}>
             <div className={style.WhoWeHelp__container}>

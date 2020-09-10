@@ -44,7 +44,7 @@ function FourSteps() {
             <h3 className={style.fourSteps__header}>Wystarczą 4 proste kroki</h3>
             <Decoration className={style.separator}/>
             <div className={style.items}>
-                {items.map(item=>(<StepItem key={item.id} img={item.img} header={item.header} text={item.text}/> ))}
+                {items.map(item=>(<StepItem key={item.id} {...item}/> ))}
             </div>
             <div className={style.link}>
                 <Link to={'/logowanie'}>Oddaj rzeczy</Link>

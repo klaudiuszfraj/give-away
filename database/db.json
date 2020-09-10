@@ -5,6 +5,27 @@
       "desc":"jakis opis",
       "items":[
         {
+          "header":"Dbam o zdrowie",
+          "subheader":"Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+          "desc":"ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+        },
+        {
+          "header":"Dla dzieci",
+          "subheader":"Pomoc dzieciom z ubogich rodzin.",
+          "desc":"ubrania, meble, zabawki"
+        },
+        {
+          "header":"Bez domu",
+          "subheader":"Pomoc dla osób nie posiadających miejsca zamieszkania.",
+          "desc":"ubrania, jedzenie, ciepłe koce"
+        }
+      ]
+    },
+    {
+      "name":"Ogganizacjom",
+      "desc":"jakis opis",
+      "items":[
+        {
           "header":"to jest header",
           "subheader":"to jest subheader",
           "desc":"to jest desc"
@@ -22,7 +43,7 @@
       ]
     },
     {
-      "name":"Ogganizacjom",
+      "name":"Lokalnym zbiórką",
       "desc":"jakis opis",
       "items":[
         {

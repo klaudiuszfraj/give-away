@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home, Login} from './components'
+import {Home, Login, Logout} from './components'
 import './App.scss';
 
 import {
@@ -18,6 +18,9 @@ function App() {
                 </Route>
                 <Route path={'/logowanie'}>
                     <Login/>
+                </Route>
+                <Route path={'/wylogowano'}>
+                    <Logout/>
                 </Route>
 
             </Switch>

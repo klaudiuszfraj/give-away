@@ -11,10 +11,9 @@ function Login() {
         <>
             <Header/>
             <main className={style.Login}>
-                <div>
+                <div className={style.Login__container}>
                     <h1>Zaloguj się</h1>
                     <Decoration/>
-                    <div>
                         <form action="">
                             <div className={style.Login__inputs}>
                                 <label htmlFor="email">Email</label>
@@ -27,8 +26,6 @@ function Login() {
                                 <button>Zaloguj się</button>
                             </div>
                         </form>
-
-                    </div>
                 </div>
             </main>
         </>

@@ -1,17 +1,68 @@
 @import "../../scss/main.scss";
-.Login{
+
+.Login {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $color-dark-gray;
+  .Login__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+    svg{
+      margin: 30px 0;
+    }
+  }
 
+  form{
+    width: 100%;
+    .Login__inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-white;
+      padding: 30px;
+      label{
+        align-self: flex-start;
+      }
+      input{
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: .75px solid $color-dark-gray;
+        margin: 15px 0;
+        width: 100%;
+      }
+    }
 
-
-
-  .Login__inputs{
+    .Login__btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      a, button{
+        text-decoration: none;
+        font-size: 14px;
+        padding: 9px 10px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: $color-dark-gray;
+        //  todo:: import kolorów z main
+        &:last-child{
+          border: 0.75px solid #5E5322;
+          margin-left: 20px;
+        }
+      }
+    }
 
   }
-  .Login__btns{
 
-  }
 }

@@ -1,8 +1,8 @@
 {
-  "fundations":[
+  "foundations":[
     {
       "name":"Fundacjom",
-      "desc":"jakis opis",
+      "desc":"Fundacja",
       "items":[
         {
           "header":"Dbam o zdrowie",
@@ -18,12 +18,22 @@
           "header":"Bez domu",
           "subheader":"Pomoc dla osób nie posiadających miejsca zamieszkania.",
           "desc":"ubrania, jedzenie, ciepłe koce"
+        },
+        {
+          "header":"Dla dzieci",
+          "subheader":"Pomoc dzieciom z ubogich rodzin.",
+          "desc":"ubrania, meble, zabawki"
+        },
+        {
+          "header":"Bez domu",
+          "subheader":"Pomoc dla osób nie posiadających miejsca zamieszkania.",
+          "desc":"ubrania, jedzenie, ciepłe koce"
         }
       ]
     },
     {
       "name":"Organizacją pozarządowym",
-      "desc":"jakis opis",
+      "desc":"Organizacja",
       "items":[
         {
           "header":"to jest header",
@@ -44,7 +54,7 @@
     },
     {
       "name":"Lokalnym zbiórką",
-      "desc":"jakis opis",
+      "desc":"Zbiórka",
       "items":[
         {
           "header":"to jest header",

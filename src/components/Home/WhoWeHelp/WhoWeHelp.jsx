@@ -33,7 +33,8 @@ function WhoWeHelp() {
             setPagination(prevState => ({
                 ...prevState,
                 foundationType: foundationObj.desc,
-                foundationList: foundationObj.items
+                foundationList: foundationObj.items,
+                currentPage: 1
             }))
             console.log(foundationObj);
         }

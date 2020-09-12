@@ -36,7 +36,6 @@ function WhoWeHelp() {
                 foundationList: foundationObj.items,
                 currentPage: 1
             }))
-            console.log(foundationObj);
         }
     }, [selectedItem, allFoundationsList]);
 
@@ -45,7 +44,6 @@ function WhoWeHelp() {
     const indexOfFirstTodo = indexOfLastTodo - pagination.todosPerPage;
     const currentList = pagination.foundationList.slice(indexOfFirstTodo, indexOfLastTodo);
 
-    console.log(currentList);
     return (
         <section className={style.WhoWeHelp} id={'foundation'}>
             <div className={style.WhoWeHelp__container}>

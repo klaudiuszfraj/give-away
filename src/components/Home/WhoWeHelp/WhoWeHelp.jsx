@@ -30,11 +30,11 @@ function WhoWeHelp() {
                 return item.name === selectedItem;
             })
             const foundationObj = foundation[0];
-            setPagination((prevState => ({
+            setPagination(prevState => ({
                 ...prevState,
                 foundationType: foundationObj.desc,
                 foundationList: foundationObj.items
-            })))
+            }))
             console.log(foundationObj);
         }
     }, [selectedItem, allFoundationsList]);
@@ -66,8 +66,7 @@ function WhoWeHelp() {
                     ))}
                 </div>
                 <div className={style.WhoWeHelp__pages}>
-                    <Pagination postsPerPage={pagination.todosPerPage} totalPosts={pagination.foundationList.length}/>
-
+                    <Pagination postsPerPage={pagination.todosPerPage} totalPosts={pagination.foundationList.length} onChangePageNumber={setPagination}/>
                 </div>
 
             </div>

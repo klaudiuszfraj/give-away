@@ -3,23 +3,25 @@
 .Contact {
   height: 700px;
   display: flex;
-  justify-content: space-between;
   align-items: stretch;
-
-  .Contact__img {
+  position: relative;
+  &::after{
+    content: '';
     background-image: url("../../../assets/Background-Contact-Form.jpg");
-    width: 60%;
+    opacity: .3;
     background-size: cover;
     background-position: top;
-    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   .Contact__container {
-    width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    width: 100%;
     color: $color-dark-gray;
     text-align: center;
     h3{

@@ -32,7 +32,6 @@ function Contact() {
     }
     return (
         <section className={style.Contact} id={'contact'}>
-            <div className={style.Contact__img}/>
             <div className={style.Contact__container}>
                 <div className={style.Contact__content}>
                     <h3>Skontaktuj się z nami</h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home } from './components'
+import {Home, Login} from './components'
 import './App.scss';
 
 import {
@@ -9,20 +9,20 @@ import {
 } from "react-router-dom";
 
 
-
 function App() {
-  return (
-      <Router>
-          <Switch>
-            <Route path={'/'}>
-                <Home/>
-            </Route>
+    return (
+        <Router>
+            <Switch>
+                <Route exact path={'/'}>
+                    <Home/>
+                </Route>
+                <Route path={'/logowanie'}>
+                    <Login/>
+                </Route>
 
-
-
-          </Switch>
-      </Router>
-  );
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

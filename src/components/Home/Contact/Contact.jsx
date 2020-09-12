@@ -15,7 +15,6 @@ function Contact() {
         success: false
     });
 
-
     const handleSubmit = (e)=>{
         e.preventDefault();
         //validation functions
@@ -47,10 +46,6 @@ function Contact() {
                 email,
                 message
             })
-            // setErrors(prevState => ({
-            //     ...prevState,
-            //     success: true
-            // }))
         }
     }
     return (

@@ -3,20 +3,48 @@ import style from './Whowehelp.module.scss'
 import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 import Option from "./Option/Option";
 import ListItem from "./ListItem/ListItem";
-import {fetchItemList} from "../../../API";
+import {fetchFoundationsList} from "../../../API";
+import Pagination from "./Pagination/Pagination";
 
 function WhoWeHelp() {
-    const [itemList, setItemList] = useState([]);
-    useEffect(()=>{
-        const fetchList = async ()=>{
-            const itemList = await fetchItemList();
-            setItemList(itemList);
+    const [allFoundationsList, setAllFoundationsList] = useState([]);
+    const [selectedItem, setSelectedItem] = useState('Fundacjom');
+    const [pagination, setPagination] = useState({
+                                                                foundationList: [],
+                                                                foundationType: '',
+                                                                currentPage: 1,
+                                                                todosPerPage: 3
+                                                            });
+
+    useEffect(() => {
+        const fetchFoundations = async () => {
+            const FoundationsList = await fetchFoundationsList();
+            setAllFoundationsList(FoundationsList);
         }
-        fetchList();
-    },[])
+        fetchFoundations();
+    }, []);
+
+    useEffect(() => {
+        if (allFoundationsList.length !== 0) {
+            const foundation = allFoundationsList.filter((item) => {
+                return item.name === selectedItem;
+            })
+            const foundationObj = foundation[0];
+            setPagination((prevState => ({
+                ...prevState,
+                foundationType: foundationObj.desc,
+                foundationList: foundationObj.items
+            })))
+            console.log(foundationObj);
+        }
+    }, [selectedItem, allFoundationsList]);
 
 
+    const indexOfLastTodo = pagination.currentPage * pagination.todosPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - pagination.todosPerPage;
+    const currentList = pagination.foundationList.slice(indexOfFirstTodo, indexOfLastTodo);
 
+    console.log(currentList);
     return (
         <section className={style.WhoWeHelp} id={'foundation'}>
             <div className={style.WhoWeHelp__container}>
@@ -24,23 +52,22 @@ function WhoWeHelp() {
                     <h1>Komu pomagamy?</h1>
                     <Decoration/>
                     <div className={style.WhoWeHelp__options}>
-                        <Option title={'Fundacjom'}/>
-                        <Option title={'Organizacją pozarządowym'}/>
-                        <Option title={'Lokalnym zbiórką'}/>
+                        <Option title={'Fundacjom'} onSetItem={setSelectedItem}/>
+                        <Option title={'Organizacją pozarządowym'} onSetItem={setSelectedItem}/>
+                        <Option title={'Lokalnym zbiórką'} onSetItem={setSelectedItem}/>
                     </div>
                     <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
                         sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
 
                 </div>
                 <div className={style.WhoWeHelp__list}>
-                    <ListItem type={'Fundacja'} header={'Dbam o zdrowie'} details={'lorem lorem lorem lorem lorem lorem lorem'} items={'lorem lorem lorem lorem'}/>
-                    <ListItem type={'Fundacja'} header={'Dbam o zdrowie'} details={'lorem lorem lorem lorem lorem lorem lorem'} items={'lorem lorem lorem lorem'}/>
-                    <ListItem type={'Fundacja'} header={'Dbam o zdrowie'} details={'lorem lorem lorem lorem lorem lorem lorem'} items={'lorem lorem lorem lorem'}/>
+                    {currentList.length && currentList.map((listItem, index)=>(
+                        <ListItem key={index} type={pagination.foundationType} header={listItem.header} details={listItem.subheader} items={listItem.desc}/>
+                    ))}
                 </div>
                 <div className={style.WhoWeHelp__pages}>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
+                    <Pagination postsPerPage={pagination.todosPerPage} totalPosts={pagination.foundationList.length}/>
+
                 </div>
 
             </div>

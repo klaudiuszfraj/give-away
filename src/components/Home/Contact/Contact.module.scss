@@ -5,18 +5,19 @@
   display: flex;
   align-items: stretch;
   position: relative;
-  &::after{
-    content: '';
-    background-image: url("../../../assets/Background-Contact-Form.jpg");
-    opacity: .3;
-    background-size: cover;
-    background-position: top;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
+  //&::after{
+  //  content: '';
+  //  background-image: url("../../../assets/Background-Contact-Form.jpg");
+  //  opacity: .2;
+  //  background-size: cover;
+  //  background-position: top;
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 100%;
+  //}
 
   .Contact__container {
+    opacity: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -35,6 +36,28 @@
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
+      .Contact__message{
+        color: green;
+      }
+      small{
+        height: 10px;
+        display: none;
+        padding-top: 5px;
+        font-size: 10px;
+        color: red;
+      }
+      [class*=error]{
+        small{
+          display: initial;
+        }
+      }
+      [class*=succes]{
+        small{
+          display: initial;
+          color: green;
+          font-size: 18px;
+        }
+      }
       .Contact__userInfo{
         display: flex;
         justify-content: space-between;

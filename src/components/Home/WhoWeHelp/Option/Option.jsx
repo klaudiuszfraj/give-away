@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './Option.module.scss';
 
-function Option({title, classN}) {
+function Option({title, onSetItem}) {
  return (
-  <button className={style.btn}>
+  <button className={style.btn} onClick={(e)=>{onSetItem(title)}}>
       {title}
   </button>
  );

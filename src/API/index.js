@@ -15,9 +15,7 @@ export const fetchFoundationsList = async ()=>{
 
 export const sendForm = async (formInfo)=>{
     try{
-        const { data } = axios.post(FORM_URL,formInfo);
-        console.log('sendForm',data);
-        return data;
+        return axios.post(FORM_URL,formInfo);
     }
     catch (error){
         console.log(error);

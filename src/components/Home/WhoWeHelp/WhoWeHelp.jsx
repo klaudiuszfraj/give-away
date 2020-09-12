@@ -67,7 +67,9 @@ function WhoWeHelp() {
                     ))}
                 </div>
                 <div className={style.WhoWeHelp__pages}>
+                    {pagination.todosPerPage / pagination.foundationList.length !== 1 &&
                     <Pagination postsPerPage={pagination.todosPerPage} totalPosts={pagination.foundationList.length} onChangePageNumber={setPagination}/>
+                    }
                 </div>
 
             </div>

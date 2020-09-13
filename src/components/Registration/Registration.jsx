@@ -6,6 +6,7 @@ import classNames from "classnames";
 import {Link} from "react-router-dom";
 import {registerUser} from "../../API";
 
+//todo::add validation two email in database
 function Registration() {
 
     const [email, setEmail] = useState('ffffffff@ff.pl')

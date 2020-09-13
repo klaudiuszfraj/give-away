@@ -10,7 +10,7 @@ function Logout() {
         <>
             <Header/>
             <main className={style.Logout}>
-                <h1>Wylogowanie nastapiło pomyślnie!</h1>
+                <h1>Wylogowanie nastapiło <br/> pomyślnie!</h1>
                 <Decoration/>
                 <Link to={'/'}>Strona główna</Link>
             </main>

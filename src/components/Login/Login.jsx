@@ -5,6 +5,9 @@ import style from './Login.module.scss';
 import {Link} from "react-router-dom";
 import classNames from 'classnames';
 
+
+//todo::check user in database
+
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

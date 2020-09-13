@@ -15,7 +15,7 @@ export const fetchFoundationsList = async ()=>{
 
 export const sendForm = async (formInfo)=>{
     try{
-        return axios.post(FORM_URL,formInfo);
+        return await axios.post(FORM_URL,formInfo);
     }
     catch (error){
         console.log(error);
@@ -24,11 +24,18 @@ export const sendForm = async (formInfo)=>{
 //User
 export const registerUser = async (user) =>{
     try {
-        const data = axios.post(`${API_URL}/users`,user);
-        console.log(data);
-        return data
+        return await axios.post(`${API_URL}/users`,user);
     }
     catch (error){
         console.log(error);
     }
 }
+export const getAllUsers = async (user) =>{
+    try {
+        return await axios.get(`${API_URL}/users`,user);
+    }
+    catch (error){
+        console.log(error);
+    }
+}
+getAllUsers()

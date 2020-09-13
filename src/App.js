@@ -7,6 +7,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import Registration from "./components/Registration/Registration";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
                 </Route>
                 <Route path={'/wylogowano'}>
                     <Logout/>
+                </Route>
+                <Route path={'/rejestracja'}>
+                    <Registration/>
                 </Route>
 
             </Switch>

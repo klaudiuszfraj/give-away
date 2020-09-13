@@ -3,15 +3,16 @@ import {Header} from "../index";
 import style from './Registration.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import classNames from "classnames";
-import {Link} from "react-router-dom";
+import {Link, Redirect } from "react-router-dom";
 import {registerUser} from "../../API";
 
 //todo::add validation two email in database
 function Registration() {
 
-    const [email, setEmail] = useState('ffffffff@ff.pl')
-    const [password, setPassword] = useState('ffffff')
-    const [password2, setPassword2] = useState('ffffff')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [password2, setPassword2] = useState('')
+    const [userSend, setUserSend] = useState(false)
     const [errors, setErrors] = useState({
         email: false,
         password: false,
@@ -21,11 +22,17 @@ function Registration() {
 
     useEffect(()=>{
         if (errors.success) {
-            registerUser({
-                email: email,
-                password: password,
-                isLogged: false
-            })
+            const register = async () =>{
+                const response = await registerUser({
+                    email: email,
+                    password: password,
+                    isLogged: false
+                })
+                if(response.status === 201){
+                    setUserSend(true)
+                }
+            }
+            register();
         }
     },[errors.success])
 
@@ -67,6 +74,8 @@ function Registration() {
 
 
     return (
+        userSend ? <Redirect to={'/logowanie'}/>
+        :
         <>
             <Header/>
             <main className={style.Registration}>

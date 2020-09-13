@@ -4,25 +4,26 @@ import style from './Registration.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import classNames from "classnames";
 import {Link} from "react-router-dom";
+import {registerUser} from "../../API";
 
 function Registration() {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [password2, setPassword2] = useState('')
+    const [email, setEmail] = useState('ffffffff@ff.pl')
+    const [password, setPassword] = useState('ffffff')
+    const [password2, setPassword2] = useState('ffffff')
     const [errors, setErrors] = useState({
         email: false,
         password: false,
         password2: false,
         success: false
     })
-    const [user, setUser] = useState({})
 
     useEffect(()=>{
         if (errors.success) {
-            setUser({
+            registerUser({
                 email: email,
-                password: password
+                password: password,
+                isLogged: false
             })
         }
     },[errors.success])

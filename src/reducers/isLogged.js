@@ -7,7 +7,10 @@ const isLogged = (state = {
         case 'LOGIN':
             return action.payload;
         case 'LOGOUT':
-            return false;
+            return {
+                ...state,
+                isLogged: false
+            };
         default:
             return state;
     }

@@ -5,17 +5,24 @@ import style from './Login.module.scss';
 import {Link} from "react-router-dom";
 import classNames from 'classnames';
 
+import {useDispatch} from "react-redux";
+import {logIn} from "../../actions";
+
 
 //todo::check user in database
 
 function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({
         email: false,
         password: false,
         success: false
-    })
+    });
+
+    const dispatch = useDispatch()
+
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         function validateEmail(email) {
@@ -35,10 +42,16 @@ function Login() {
         setErrors({
             email: !validateEmail(email),
             password: !validatePassword(password),
-            success: false
-        })
-
-
+            success: validateEmail(email) && validatePassword(password)
+        });
+        //todo:: dobleclick to send user
+        if (errors.success){
+            dispatch(logIn({
+                email,
+                password,
+                isLogged: true
+            }))
+        }
     }
 
 

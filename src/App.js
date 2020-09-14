@@ -1,7 +1,6 @@
 import React from 'react';
 import {Home, Login, Logout, Registration} from './components'
 import './App.scss';
-
 import {
     BrowserRouter as Router,
     Switch,

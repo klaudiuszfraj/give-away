@@ -3,8 +3,7 @@ import { Link } from 'react-scroll';
 import { Link as UserLinks } from 'react-router-dom';
 import style from './Header.module.scss';
 import classNames from 'classnames';
-import {useSelector, useDispatch} from "react-redux";
-// import logOut
+import {useSelector} from "react-redux";
 
 
 function Header() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home, Login, Logout} from './components'
+import {Home, Login, Logout, Registration} from './components'
 import './App.scss';
 
 import {
@@ -7,7 +7,6 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Registration from "./components/Registration/Registration";
 
 
 function App() {

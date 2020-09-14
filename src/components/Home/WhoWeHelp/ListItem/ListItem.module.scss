@@ -3,10 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: $font-alt;
+  font-family: $font-base;
   font-weight: lighter;
   padding:30px 0;
-  //todo:: Merriweather czciąka szeryfowa?
   &:nth-child(2){
     border-top: 0.75px solid $color-dark-gray;
     border-bottom: 0.75px solid $color-dark-gray;

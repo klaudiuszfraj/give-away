@@ -3,14 +3,14 @@ import { Link as ScrollLink} from 'react-scroll';
 import { Link, useLocation } from 'react-router-dom';
 import style from './Header.module.scss';
 import classNames from 'classnames';
-import {useSelector} from "react-redux";
+import { connect } from "react-redux";
 
 
-function Header() {
-    const userLoggedIn = useSelector(state=>state.isLogged)
-    console.log('user w header',userLoggedIn);
+
+function Header(props) {
+    const userLoggedIn = props
     const currentLocation = useLocation();
-
+    console.log('ffffff');
     return (
         <header className={style.header}>
             <div className={classNames({'loggedIn': userLoggedIn.isLogged})}>
@@ -47,4 +47,8 @@ function Header() {
     );
 }
 
-export default Header;
+function mapStateToProps(state) {
+    return state.isLogged;
+}
+
+export default connect(mapStateToProps)(Header);

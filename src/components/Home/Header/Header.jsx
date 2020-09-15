@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 function Header(props) {
     const userLoggedIn = props
     const currentLocation = useLocation();
-    console.log('ffffff');
     return (
         <header className={style.header}>
             <div className={classNames({'loggedIn': userLoggedIn.isLogged})}>

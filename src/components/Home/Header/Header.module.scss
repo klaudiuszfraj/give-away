@@ -16,7 +16,6 @@
     a {
       text-decoration: none;
       font-size: 14px;
-      //color: #737373;
       padding: 9px 10px;
       outline: none;
       border: none;
@@ -30,6 +29,7 @@
       }
     }
   }
+
 
   [class*=loggedIn] {
     a:first-of-type {
@@ -51,9 +51,15 @@
         padding: 9px 20px;
 
         &:first-child {
-          border: 0.75px solid #3C3C3C;
+          border: 0.75px solid $color-dark-gray;
         }
       }
+      [href='/']{
+        color: $color-dark-gray;
+        text-decoration: none;
+        padding: 5px 14px;
+      }
+
 
     }
   }

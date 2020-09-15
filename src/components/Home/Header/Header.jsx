@@ -39,11 +39,7 @@ function Header() {
                     </>
                     :
                     <>
-                        <Link to={'/#start'}>Start</Link>
-                        <Link to={'/#FourSteps'}>O co chodzi?</Link>
-                        <Link to={'/#aboutUs'}>O nas</Link>
-                        <Link to={'/#foundation'}>Fundcja i organizacje</Link>
-                        <Link to={'/#contact'}>Kontakt</Link>
+                        <Link to={'/'}>X</Link>
                     </>
                 }
             </nav>

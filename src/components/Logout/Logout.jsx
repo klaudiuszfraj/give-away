@@ -5,8 +5,6 @@ import {Link} from "react-router-dom";
 import {logOut} from "../../actions";
 import {connect} from "react-redux";
 
-
-//todo:: wylogowywaqnie, addredirect clean up
 function Logout(props) {
     props.logOut()
     return (

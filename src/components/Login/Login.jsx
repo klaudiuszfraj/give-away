@@ -5,12 +5,9 @@ import style from './Login.module.scss';
 import {Link} from "react-router-dom";
 import classNames from 'classnames';
 
-import {useDispatch} from "react-redux";
 import {logIn} from "../../actions";
 import {connect} from "react-redux";
 
-
-//todo::check user in database
 
 function Login(props) {
     const [email, setEmail] = useState('');
@@ -20,9 +17,6 @@ function Login(props) {
         password: false,
         success: false
     });
-    // console.log(props);
-    // const dispatch = useDispatch()
-
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -52,12 +46,6 @@ function Login(props) {
                 password,
                 isLogged: true
             })
-
-            // dispatch(logIn({
-            //     email,
-            //     password,
-            //     isLogged: true
-            // }))
         }
     }
 

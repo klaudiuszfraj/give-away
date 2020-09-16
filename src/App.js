@@ -1,5 +1,5 @@
 import React from 'react';
-import {Home, Login, Logout, Registration} from './components'
+import {Form, Home, Login, Logout, Registration} from './components'
 import './App.scss';
 import {
     BrowserRouter as Router,
@@ -7,7 +7,7 @@ import {
     Route,
 } from "react-router-dom";
 
-
+//todo:: import header
 function App() {
     return (
         <Router>
@@ -23,6 +23,9 @@ function App() {
                 </Route>
                 <Route path={'/rejestracja'}>
                     <Registration/>
+                </Route>
+                <Route path={'/oddaj-rzeczy'}>
+                    <Form/>
                 </Route>
 
             </Switch>

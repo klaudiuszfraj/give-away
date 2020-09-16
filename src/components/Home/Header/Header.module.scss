@@ -22,9 +22,8 @@
       background-color: transparent;
       cursor: pointer;
       color: $color-dark-gray;
-      //  todo:: import kolorów z main
       &:last-child {
-        border: 0.75px solid #5E5322;
+        border: 0.75px solid $color-dallas;
         margin-left: 20px;
       }
     }
@@ -33,7 +32,7 @@
 
   [class*=loggedIn] {
     a:first-of-type {
-      border: 0.75px solid #5E5322;
+      border: 0.75px solid $color-dallas;
       margin-left: 20px;
     }
     a:last-child{
@@ -47,7 +46,7 @@
       a {
         cursor: pointer;
         font-size: 18px;
-        color: #3C3C3C;
+        color: $color-dark-gray;
         padding: 9px 20px;
 
         &:first-child {

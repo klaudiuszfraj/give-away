@@ -1,0 +1,83 @@
+@import "../../scss/main.scss";
+
+.Form__hero{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 700px;
+  margin: -100px 2% 0 0;
+  .Form__hero__img{
+    width: 45%;
+    height: 100%;
+    background-image: url("../../assets/Form-Hero-Image.jpg");
+    background-size: cover;
+    background-position: right;
+    z-index: -1;
+  }
+  .Form__hero__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+      text-align: center;
+      font-size: 38px;
+      color: #3C3C3C;
+    }
+    svg{
+      margin: 30px 0 30px 0;
+    }
+    p{
+      font-size: 40px;
+      font-weight: lighter;
+      margin-bottom: 30px;
+    }
+    .hero__boxes{
+      display: flex;
+      color: $color-dark-gray;
+      font-weight: lighter;
+      div{
+        position: relative;
+        p:first-child{
+          font-size: 32px;
+          text-align: center;
+          margin-bottom: 14px;
+        }
+        p:last-child{
+          font-size: 22px;
+          text-align: center;
+          max-width: 145px;
+        }
+        &::after{
+          content: "";
+          display: block;
+          width: 120px;
+          height: 120px;
+          border: .75px solid $color-dark-gray;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+
+.Form__important{
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $color-yellow;
+  h2{
+    font-weight: bold;
+    font-size: 32px;
+  }
+  p{
+    color: $color-dark-gray;
+    font-size: 18px;
+  }
+}

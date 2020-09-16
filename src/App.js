@@ -7,7 +7,6 @@ import {
     Route,
 } from "react-router-dom";
 
-//todo:: import header
 function App() {
     return (
         <Router>

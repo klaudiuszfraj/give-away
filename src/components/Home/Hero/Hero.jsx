@@ -11,7 +11,7 @@ function Hero() {
             <h1>Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
             <Decoration/>
             <div className={style.hero__buttons}>
-                <Link to={'/logowanie'}>Oddaj rzeczy</Link>
+                <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
                 <Link to={'/logowanie'}>Zorganizuj zbiórję</Link>
             </div>
             </div>

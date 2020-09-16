@@ -3,11 +3,13 @@ import style from './Whowehelp.module.scss'
 import {ReactComponent as Decoration} from "../../../assets/Decoration.svg";
 import Option from "./Option/Option";
 import ListItem from "./ListItem/ListItem";
-import {fetchFoundationsList} from "../../../API";
 import Pagination from "./Pagination/Pagination";
+import {connect} from "react-redux";
+import {firestoreConnect} from "react-redux-firebase";
+import {compose} from "redux";
 
-function WhoWeHelp() {
-    const [allFoundationsList, setAllFoundationsList] = useState([]);
+
+function WhoWeHelp({foundationList}) {
     const [selectedItem, setSelectedItem] = useState('Fundacjom');
     const [pagination, setPagination] = useState({
                                                                 foundationList: [],
@@ -15,18 +17,12 @@ function WhoWeHelp() {
                                                                 currentPage: 1,
                                                                 todosPerPage: 3
                                                             });
+    console.log('props',foundationList);
 
     useEffect(() => {
-        const fetchFoundations = async () => {
-            const FoundationsList = await fetchFoundationsList();
-            setAllFoundationsList(FoundationsList);
-        }
-        fetchFoundations();
-    }, []);
-
-    useEffect(() => {
-        if (allFoundationsList.length !== 0) {
-            const foundation = allFoundationsList.filter((item) => {
+        if (foundationList) {
+            console.log('defd');
+            const foundation = foundationList.filter((item) => {
                 return item.name === selectedItem;
             })
             const foundationObj = foundation[0];
@@ -37,7 +33,7 @@ function WhoWeHelp() {
                 currentPage: 1
             }))
         }
-    }, [selectedItem, allFoundationsList]);
+    }, [selectedItem,foundationList]);
 
 
     const indexOfLastTodo = pagination.currentPage * pagination.todosPerPage;
@@ -74,5 +70,13 @@ function WhoWeHelp() {
         </section>
     );
 }
+function mapStateToProps(state) {
+    return {foundationList: state.firestore.ordered.foundations}
+}
 
-export default WhoWeHelp;
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'foundations'}
+    ])
+)(WhoWeHelp);

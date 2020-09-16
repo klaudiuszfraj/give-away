@@ -26,3 +26,16 @@ export const registerUser = (user)=>{
 
     }
 }
+
+export const foundationList = (foundation)=>{
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+        // async function to firestore
+        const firestore = getFirestore();
+        firestore.collection("foundations").add({...foundation}).then(()=>{
+            dispatch({type: 'GETFOUNDATIONS', payload: foundation});
+        }).catch(error=>{
+            dispatch({type: 'GETFOUNDATIONS_ERROR', payload: foundation});
+        })
+
+    }
+}

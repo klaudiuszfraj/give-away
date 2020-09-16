@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Header} from "../index";
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import style from './Login.module.scss';
 import {Link} from "react-router-dom";
@@ -34,19 +33,20 @@ function Login(props) {
             const re = /^[A-Za-z]*$/;
             return re.test(String(password))
         }
+
         setErrors({
             email: !validateEmail(email),
             password: !validatePassword(password),
             success: validateEmail(email) && validatePassword(password)
         });
         //todo:: dobleclick to send user add redirect to home
-        if (errors.success){
-            props.logIn({
-                email,
-                password,
-                isLogged: true
-            })
-        }
+    }
+    if (errors.success){
+        props.logIn({
+            email,
+            password,
+            isLogged: true
+        })
     }
 
 

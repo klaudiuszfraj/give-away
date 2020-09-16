@@ -1,7 +1,10 @@
 export const logIn = (user)=>{
-    return {
-        type: 'LOGIN',
-        payload: user
+    return (dispatch, getState) =>{
+        //async call to database
+        dispatch({
+            type: 'LOGIN',
+            payload: user
+        })
     };
 };
 

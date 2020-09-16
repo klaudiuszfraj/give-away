@@ -7,11 +7,12 @@ import classNames from 'classnames';
 
 import {useDispatch} from "react-redux";
 import {logIn} from "../../actions";
+import {connect} from "react-redux";
 
 
 //todo::check user in database
 
-function Login() {
+function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({
@@ -19,8 +20,8 @@ function Login() {
         password: false,
         success: false
     });
-
-    const dispatch = useDispatch()
+    // console.log(props);
+    // const dispatch = useDispatch()
 
 
     const handleSubmit = (e)=>{
@@ -46,11 +47,17 @@ function Login() {
         });
         //todo:: dobleclick to send user
         if (errors.success){
-            dispatch(logIn({
+            props.logIn({
                 email,
                 password,
                 isLogged: true
-            }))
+            })
+
+            // dispatch(logIn({
+            //     email,
+            //     password,
+            //     isLogged: true
+            // }))
         }
     }
 
@@ -84,4 +91,10 @@ function Login() {
     );
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logIn: (user)=>dispatch(logIn(user))
+    }
+}
+
+export default connect(null, mapDispatchToProps )(Login);

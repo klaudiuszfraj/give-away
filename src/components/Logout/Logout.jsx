@@ -1,17 +1,14 @@
 import React from 'react';
-import {Header} from "../index";
 import style from './Logout.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import {Link} from "react-router-dom";
-// import {useDispatch} from "react-redux";
-// import {logOut} from "../../actions";
+import {logOut} from "../../actions";
+import {connect} from "react-redux";
 
-// Attempted import error: 'useDispatch' is not exported from 'react-redux'.
 
 //todo:: wylogowywaqnie, addredirect clean up
-function Logout() {
-    // const dispatch = useDispatch()
-    // dispatch(logOut());
+function Logout(props) {
+    props.logOut()
     return (
         <>
             <main className={style.Logout}>
@@ -22,5 +19,10 @@ function Logout() {
         </>
     );
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logOut: ()=>dispatch(logOut())
+    }
+}
 
-export default Logout;
+export default connect(null, mapDispatchToProps)(Logout);

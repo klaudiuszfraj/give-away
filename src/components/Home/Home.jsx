@@ -6,7 +6,6 @@ import style from './Home.module.scss'
 function Home() {
  return (
   <div className={style.home__container}>
-      <Header/>
       <Hero/>
       <Stats/>
       <FourSteps/>

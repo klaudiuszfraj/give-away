@@ -14,7 +14,6 @@ function Logout() {
     // dispatch(logOut());
     return (
         <>
-            <Header/>
             <main className={style.Logout}>
                 <h1>Wylogowanie nastapiło <br/> pomyślnie!</h1>
                 <Decoration/>

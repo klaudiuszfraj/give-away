@@ -85,7 +85,6 @@ function Registration(props) {
         userSend ? <Redirect to={'/logowanie'}/>
             :
             <>
-                <Header/>
                 <main className={style.Registration}>
                     <div className={style.Registration__container}>
                         <h1>Załóż konto</h1>

@@ -6,7 +6,6 @@ import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 function Form() {
     return (
         <>
-            <Header/>
             <section className={style.Form__hero}>
                 <div className={style.Form__hero__img}/>
                 <div className={style.Form__hero__info}>

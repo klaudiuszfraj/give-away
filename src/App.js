@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Home, Login, Logout, Registration} from './components'
+import {Form, Header, Home, Login, Logout, Registration} from './components'
 import './App.scss';
 import {
     BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
 function App() {
     return (
         <Router>
+            <Header/>
             <Switch>
                 <Route exact path={'/'}>
                     <Home/>

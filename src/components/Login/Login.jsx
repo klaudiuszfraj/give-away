@@ -53,7 +53,6 @@ function Login(props) {
 
     return (
         <>
-            <Header/>
             <main className={style.Login}>
                 <div className={style.Login__container}>
                     <h1>Zaloguj się</h1>

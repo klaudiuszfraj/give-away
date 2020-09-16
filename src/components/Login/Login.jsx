@@ -39,7 +39,7 @@ function Login(props) {
             password: !validatePassword(password),
             success: validateEmail(email) && validatePassword(password)
         });
-        //todo:: dobleclick to send user
+        //todo:: dobleclick to send user add redirect to home
         if (errors.success){
             props.logIn({
                 email,

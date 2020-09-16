@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 // Attempted import error: 'useDispatch' is not exported from 'react-redux'.
 
-//todo:: wylogowywaqnie
+//todo:: wylogowywaqnie, addredirect clean up
 function Logout() {
     // const dispatch = useDispatch()
     // dispatch(logOut());

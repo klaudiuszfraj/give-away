@@ -50,7 +50,7 @@ export const signOut = ()=>{
 export const registerUser = ({email, password})=>{
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         // async function to firestore
-        const firestore = getFirestore();
+        // const firestore = getFirestore();
         // firestore.collection("users").add({...user}).then(()=>{
         //     dispatch({type: 'REGISTER', payload: user});
         // }).catch(error=>{

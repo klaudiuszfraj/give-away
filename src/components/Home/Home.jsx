@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Hero, Stats, FourSteps, About, WhoWeHelp, Contact, Footer } from "../index";
+import { Hero, Stats, FourSteps, About, WhoWeHelp, Contact, Footer } from "../index";
 import style from './Home.module.scss'
 
 

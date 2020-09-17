@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Header} from "../index";
 import style from './Registration.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import classNames from "classnames";

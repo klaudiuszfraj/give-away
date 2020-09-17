@@ -1,5 +1,5 @@
 import React from 'react';
-import {Contact, Footer, Header} from "../index";
+import {Contact, Footer} from "../index";
 import style from './Form.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 

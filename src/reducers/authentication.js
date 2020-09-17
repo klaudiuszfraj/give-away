@@ -1,4 +1,4 @@
-const isLogged = (state = {
+const authentication = (state = {
     authError: null
 }, action) => {
     switch (action.type) {
@@ -14,7 +14,8 @@ const isLogged = (state = {
                 ...state,
                 authError: 'Login failed'
             }
-        case 'LOGOUT':
+        case 'SIGNOUT_SUCCESS':
+            console.log('SIGNOUT_SUCCESS');
             return {
                 ...state,
                 isLogged: false
@@ -23,4 +24,4 @@ const isLogged = (state = {
             return state;
     }
 }
-export default isLogged;
+export default authentication;

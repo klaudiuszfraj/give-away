@@ -2,12 +2,12 @@ import {combineReducers} from "redux";
 import {firestoreReducer} from "redux-firestore";
 import {firebaseReducer} from "react-redux-firebase";
 
-import isLogged from "./isLogged";
+import authentication from "./Authentication";
 import register from "./register";
 import foundationList from "./foundationsList";
 
 const allReducers = combineReducers({
-    isLogged,
+    isLogged: authentication,
     register,
     foundationList,
     firestore: firestoreReducer,

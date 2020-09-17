@@ -2,11 +2,11 @@ import React from 'react';
 import style from './Logout.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import {Link} from "react-router-dom";
-import {logOut} from "../../actions";
+import {signOut} from "../../actions";
 import {connect} from "react-redux";
 
 function Logout(props) {
-    props.logOut()
+    props.signOut()
     return (
         <>
             <main className={style.Logout}>
@@ -19,7 +19,7 @@ function Logout(props) {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        logOut: ()=>dispatch(logOut())
+        signOut: ()=>dispatch(signOut())
     }
 }
 

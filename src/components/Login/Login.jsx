@@ -4,7 +4,7 @@ import style from './Login.module.scss';
 import {Link} from "react-router-dom";
 import classNames from 'classnames';
 
-import {logIn} from "../../actions";
+import {signIn} from "../../actions";
 import {connect} from "react-redux";
 
 
@@ -40,14 +40,14 @@ function Login(props) {
             success: validateEmail(email) && validatePassword(password)
         });
         //todo:: dobleclick to send user add redirect to home
+        if (errors.success){
+            props.signIn({
+                email,
+                password,
+            })
+        }
     }
-    if (errors.success){
-        props.logIn({
-            email,
-            password,
-            isLogged: true
-        })
-    }
+
 
 
 
@@ -57,6 +57,7 @@ function Login(props) {
                 <div className={style.Login__container}>
                     <h1>Zaloguj się</h1>
                     <Decoration/>
+                    {props.authError ? <p className={style.Login__message}>{props.authError}</p> : null}
                         <form action="" onSubmit={e=>handleSubmit(e)}>
                             <div className={style.Login__inputs}>
                                 <label htmlFor="email">Email</label>
@@ -77,11 +78,16 @@ function Login(props) {
         </>
     );
 }
-
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = state => {
     return {
-        logIn: (user)=>dispatch(logIn(user))
+        authError: state.isLogged.authError
     }
 }
 
-export default connect(null, mapDispatchToProps )(Login);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: (user)=>dispatch(signIn(user))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps )(Login);

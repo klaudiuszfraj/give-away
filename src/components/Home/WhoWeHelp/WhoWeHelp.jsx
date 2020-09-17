@@ -17,11 +17,8 @@ function WhoWeHelp({foundationList}) {
                                                                 currentPage: 1,
                                                                 todosPerPage: 3
                                                             });
-    console.log('props',foundationList);
-
     useEffect(() => {
         if (foundationList) {
-            console.log('defd');
             const foundation = foundationList.filter((item) => {
                 return item.name === selectedItem;
             })

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import style from './Login.module.scss';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import classNames from 'classnames';
 
 import {signIn} from "../../actions";
@@ -16,7 +16,7 @@ function Login(props) {
         password: false,
         success: false
     });
-
+    console.log(props);
     const handleSubmit = (e)=>{
         e.preventDefault();
         function validateEmail(email) {
@@ -50,7 +50,7 @@ function Login(props) {
 
 
 
-
+    if (props.isLogged) return <Redirect to={'/'}/>
     return (
         <>
             <main className={style.Login}>
@@ -79,8 +79,10 @@ function Login(props) {
     );
 }
 const mapStateToProps = state => {
+    console.log(state);
     return {
-        authError: state.isLogged.authError
+        authError: state.isLogged.authError,
+        isLogged: state.firebase.auth.uid
     }
 }
 

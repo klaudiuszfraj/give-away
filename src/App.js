@@ -5,32 +5,33 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
+    Redirect
 } from "react-router-dom";
+import {connect} from 'react-redux';
 
-function App() {
+function App({ uid }) {
     return (
         <Router>
             <Header/>
             <Switch>
-                <Route exact path={'/'}>
-                    <Home/>
-                </Route>
-                <Route path={'/logowanie'}>
-                    <Login/>
-                </Route>
-                <Route path={'/wylogowano'}>
-                    <Logout/>
-                </Route>
-                <Route path={'/rejestracja'}>
-                    <Registration/>
-                </Route>
-                <Route path={'/oddaj-rzeczy'}>
-                    <Form/>
-                </Route>
-
+                <Route exact path={'/'} component={Home}/>
+                <Route path={'/logowanie'} component={Login}/>
+                <Route path={'/rejestracja'} component={Registration}/>
+                {uid ?
+                    <>
+                    <Route path={'/wylogowano'} component={Logout}/>
+                    <Route path={'/oddaj-rzeczy'} component={Form}/>
+                    </>
+                    :
+                    <Redirect to={'/'}/>
+                }
             </Switch>
         </Router>
     );
 }
 
-export default App;
+const mapStateToProps = state => {
+    return state.firebase.auth;
+}
+
+export default connect(mapStateToProps)(App);

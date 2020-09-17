@@ -3,11 +3,9 @@ import style from './Registration.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 import classNames from "classnames";
 import {Link, Redirect} from "react-router-dom";
-// import {registerUser} from "../../API";
 import {connect} from 'react-redux';
 import {registerUser} from '../../actions/index'
 
-//todo::add validation two email in database, clean up
 function Registration(props) {
 
     const [email, setEmail] = useState('')
@@ -23,17 +21,6 @@ function Registration(props) {
 
     useEffect(() => {
         if (errors.success) {
-            // const register = async () =>{
-            //     const response = await registerUser({
-            //         email: email,
-            //         password: password,
-            //         isLogged: false
-            //     })
-            //     if(response.status === 201){
-            //         setUserSend(true)
-            //     }
-            // }
-            // register();
             props.registerUser({
                 email,
                 password,

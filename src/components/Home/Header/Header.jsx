@@ -7,24 +7,25 @@ import { connect } from "react-redux";
 
 
 
-function Header(props) {
-    const userLoggedIn = props
+function Header({auth: {uid, email}} ) {
+    console.log(uid, email);
+    const userLoggedIn = uid
+        ?
+        <>
+            <p>Cześć {email}</p>
+            <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
+            <Link to={'/wylogowano'}>Wyloguj</Link>
+        </>
+        :
+        <>
+            <Link to={'/logowanie'}>Zaloguj</Link>
+            <Link to={'/rejestracja'}>Załóż konto</Link>
+        </>;
     const currentLocation = useLocation();
     return (
         <header className={style.header}>
-            <div className={classNames({'loggedIn': userLoggedIn.isLogged})}>
-                {userLoggedIn.isLogged ?
-                    <>
-                   <p>Cześć {userLoggedIn.email}</p>
-                   <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
-                   <Link to={'/wylogowano'}>Wyloguj</Link>
-                   </>
-                :
-                    <>
-                    <Link to={'/logowanie'}>Zaloguj</Link>
-                    <Link to={'/rejestracja'}>Załóż konto</Link>
-                    </>
-                }
+            <div className={classNames({'loggedIn': uid})}>
+                {userLoggedIn}
             </div>
             <nav>
                 {currentLocation.pathname === '/'
@@ -47,7 +48,7 @@ function Header(props) {
 }
 
 function mapStateToProps(state) {
-    return state.isLogged;
+    return state.firebase;
 }
 
 export default connect(mapStateToProps)(Header);

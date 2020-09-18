@@ -55,7 +55,7 @@ export const registerUser = ({firstName, lastName, email, password})=>{
                     firstName,
                     lastName,
                     initials: firstName[0] + lastName[0],
-                    userColor: '#' + (Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(0, 6)
+                    userColor: "#"+((1<<24)*Math.random()|0).toString(16)
             })
             }).then(() => {
                 dispatch({ type: 'SIGNUP_SUCCESS' })

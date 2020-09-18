@@ -47,22 +47,22 @@ export const signOut = ()=>{
     }
 }
 
-export const registerUser = ({email, password})=>{
+export const registerUser = ({firstName, lastName, email, password})=>{
     return (dispatch, getState, { getFirebase, getFirestore }) => {
-        // async function to firestore
-        // const firestore = getFirestore();
-        // firestore.collection("users").add({...user}).then(()=>{
-        //     dispatch({type: 'REGISTER', payload: user});
-        // }).catch(error=>{
-        //     dispatch({type: 'REGISTER_ERROR', payload: error});
-        // })
-
         getFirebase().auth().createUserWithEmailAndPassword(email, password)
-            .then(user => console.log(user))
-            .catch(function(error) {
-            console.log(error)
-        });
-
+            .then(response => {
+                return getFirestore().collection('users').doc(response.user.uid).set({
+                    firstName,
+                    lastName,
+                    initials: firstName[0] + lastName[0],
+                    userColor: '#' + (Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(0, 6)
+            })
+            }).then(() => {
+                dispatch({ type: 'SIGNUP_SUCCESS' })
+        })
+            .catch(error => {
+                dispatch({ type: 'SIGNUP_ERROR', payload: error })
+            });
     }
 }
 

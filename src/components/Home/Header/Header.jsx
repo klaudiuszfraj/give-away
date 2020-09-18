@@ -7,8 +7,8 @@ import { connect } from "react-redux";
 
 
 
-function Header({ uid, email }) {
-    console.log(uid, email);
+function Header({auth: {uid, email}, profile: {firstName, lastName, userColor}}) {
+    console.log(uid, email, firstName, lastName, userColor);
     const userLoggedIn = uid
         ?
         <>
@@ -48,7 +48,11 @@ function Header({ uid, email }) {
 }
 
 function mapStateToProps(state) {
-    return state.firebase.auth;
+    console.log(state);
+    return {
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
+    };
 }
 
 export default connect(mapStateToProps)(Header);

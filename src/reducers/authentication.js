@@ -20,6 +20,17 @@ const authentication = (state = {
                 ...state,
                 isLogged: false
             };
+        case 'SIGNUP_SUCCESS':
+            return {
+                ...state,
+                authError: null
+            };
+        case 'SIGNUP_ERROR':
+            console.log('SIGNUP_ERROR', action.payload);
+            return {
+                ...state,
+                authError: action.payload.message
+            };
         default:
             return state;
     }

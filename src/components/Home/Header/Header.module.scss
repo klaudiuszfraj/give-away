@@ -31,6 +31,14 @@
 
 
   [class*=loggedIn] {
+    .initials{
+      text-transform: uppercase;
+      border-radius: 50%;
+      color: #F1f1f1;
+      padding: 12px;
+      margin-left: 5px;
+      font-weight: bolder;
+    }
     a:first-of-type {
       border: 0.75px solid $color-dallas;
       margin-left: 20px;

@@ -7,12 +7,12 @@ import { connect } from "react-redux";
 
 
 
-function Header({auth: {uid, email}, profile: {firstName, lastName, userColor}}) {
-    console.log(uid, email, firstName, lastName, userColor);
+function Header({auth: {uid, email}, profile: {initials, userColor}}) {
+    console.log(uid, email, userColor);
     const userLoggedIn = uid
         ?
         <>
-            <p>Cześć {email}</p>
+            <p>Cześć <span className={style.initials} style={{backgroundColor: userColor}}>{initials}</span></p>
             <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
             <Link to={'/wylogowano'}>Wyloguj</Link>
         </>

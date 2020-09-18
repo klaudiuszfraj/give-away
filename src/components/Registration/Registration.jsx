@@ -7,12 +7,17 @@ import {connect} from 'react-redux';
 import {registerUser} from '../../actions/index'
 
 function Registration(props) {
-
+    //todo:: robić tyle stanów?
+    //todo:: add fail case
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
     const [userSend, setUserSend] = useState(false)
     const [errors, setErrors] = useState({
+        firstName: false,
+        lastName: false,
         email: false,
         password: false,
         password2: false,
@@ -22,9 +27,10 @@ function Registration(props) {
     useEffect(() => {
         if (errors.success) {
             props.registerUser({
+                firstName,
+                lastName,
                 email,
                 password,
-                isLogged: false
             })
             setUserSend(true)
         }
@@ -57,8 +63,17 @@ function Registration(props) {
             const re = /^[A-Za-z]*$/;
             return re.test(String(password2))
         }
+        function validateNames(name) {
+            if (name.length < 3) {
+                return false
+            }
+            const re = /^[A-Za-z]*$/;
+            return re.test(String(name))
+        }
 
         setErrors({
+            firstName: !validateNames(firstName),
+            lastName: !validateNames(lastName),
             email: !validateEmail(email),
             password: !validatePassword(password),
             password2: !validatePassword2(password2),
@@ -77,6 +92,15 @@ function Registration(props) {
                         <Decoration/>
                         <form action="" onSubmit={e => handleSubmit(e)}>
                             <div className={style.Registration__inputs}>
+
+                                <label htmlFor="firstName">Imię</label>
+                                <input type="text" id={'firstName'} value={firstName} onChange={e => setFirstName(e.target.value)}/>
+                                <small className={classNames({'error': errors.firstName})}>Podane imię jest za krótkie</small>
+
+                                <label htmlFor="lastName">Nazwisko</label>
+                                <input type="text" id={'lastName'} value={lastName} onChange={e => setLastName(e.target.value)}/>
+                                <small className={classNames({'error': errors.lastName})}>Podane nazwisko jest za krótkie</small>
+
                                 <label htmlFor="email">Email</label>
                                 <input type="text" id={'email'} value={email} onChange={e => setEmail(e.target.value)}/>
                                 <small className={classNames({'error': errors.email})}>Podany email jest

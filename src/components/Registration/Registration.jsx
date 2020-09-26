@@ -7,13 +7,16 @@ import {connect} from 'react-redux';
 import {registerUser} from '../../actions/index'
 
 function Registration(props) {
-    //todo:: robić tyle stanów?
     //todo:: add fail case
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [password2, setPassword2] = useState('')
+
+    const [user, setUser] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        password2: ''
+    })
+
     const [userSend, setUserSend] = useState(false)
     const [errors, setErrors] = useState({
         firstName: false,
@@ -22,19 +25,28 @@ function Registration(props) {
         password: false,
         password2: false,
         success: false
-    })
+    });
 
     useEffect(() => {
         if (errors.success) {
-            props.registerUser({
-                firstName,
-                lastName,
-                email,
-                password,
-            })
+            props.registerUser(user)
             setUserSend(true)
         }
-    }, [errors.success])
+    }, [errors.success]);
+
+    const handleInputs = (e) => {
+        const inputId = e.target.id
+        const inputValue = e.target.value
+        setUser(prevState => ({
+            ...prevState,
+            [inputId]: inputValue
+        }))
+        //todo:: error property of null
+        // setUser(prevState => ({
+        //     ...prevState,
+        //     [e.target.id]: e.target.value
+        // }))
+    }
 
 
     const handleSubmit = (e) => {
@@ -57,7 +69,7 @@ function Registration(props) {
         }
 
         function validatePassword2(password2) {
-            if (password2 === '' || password2 !== password) {
+            if (password2 === '' || password2 !== user.password) {
                 return false
             }
             const re = /^[A-Za-z]*$/;
@@ -72,12 +84,12 @@ function Registration(props) {
         }
 
         setErrors({
-            firstName: !validateNames(firstName),
-            lastName: !validateNames(lastName),
-            email: !validateEmail(email),
-            password: !validatePassword(password),
-            password2: !validatePassword2(password2),
-            success: validateEmail(email) && validatePassword(password) && validatePassword2(password2)
+            firstName: !validateNames(user.firstName),
+            lastName: !validateNames(user.lastName),
+            email: !validateEmail(user.email),
+            password: !validatePassword(user.password),
+            password2: !validatePassword2(user.password2),
+            success: validateEmail(user.email) && validatePassword(user.password) && validatePassword2(user.password2)
         })
     }
 
@@ -94,27 +106,27 @@ function Registration(props) {
                             <div className={style.Registration__inputs}>
 
                                 <label htmlFor="firstName">Imię</label>
-                                <input type="text" id={'firstName'} value={firstName} onChange={e => setFirstName(e.target.value)}/>
+                                <input type="text" id={'firstName'} value={user.firstName} onChange={e => handleInputs(e)}/>
                                 <small className={classNames({'error': errors.firstName})}>Podane imię jest za krótkie</small>
 
                                 <label htmlFor="lastName">Nazwisko</label>
-                                <input type="text" id={'lastName'} value={lastName} onChange={e => setLastName(e.target.value)}/>
+                                <input type="text" id={'lastName'} value={user.lastName} onChange={e => handleInputs(e)}/>
                                 <small className={classNames({'error': errors.lastName})}>Podane nazwisko jest za krótkie</small>
 
                                 <label htmlFor="email">Email</label>
-                                <input type="text" id={'email'} value={email} onChange={e => setEmail(e.target.value)}/>
+                                <input type="text" id={'email'} value={user.email} onChange={e => handleInputs(e)}/>
                                 <small className={classNames({'error': errors.email})}>Podany email jest
                                     niepoprawny</small>
 
                                 <label htmlFor="password">Hasło</label>
-                                <input type="password" id={'password'} value={password}
-                                       onChange={e => setPassword(e.target.value)}/>
+                                <input type="password" id={'password'} value={user.password}
+                                       onChange={e => handleInputs(e)}/>
                                 <small className={classNames({'error': errors.password})}>Podane hasło jest
                                     niepoprawne</small>
 
                                 <label htmlFor="password2">Powtórz hasło</label>
-                                <input type="password" id={'password2'} value={password2}
-                                       onChange={e => setPassword2(e.target.value)}/>
+                                <input type="password" id={'password2'} value={user.password2}
+                                       onChange={e => handleInputs(e)}/>
                                 <small className={classNames({'error': errors.password2})}>Podane hasło jest
                                     niepoprawne</small>
                             </div>

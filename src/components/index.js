@@ -13,3 +13,5 @@ export { default as WhoWeHelp } from './Home/WhoWeHelp/WhoWeHelp';
 export { default as Contact } from './Home/Contact/Contact';
 export { default as Footer } from './Home/Footer/Footer';
 
+export { default as FormHero } from './Form/FormHero/FormHero'
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Contact, Footer} from "../index";
+import {Contact, Footer, FormHero} from "../index";
 import style from './Form.module.scss'
 import {ReactComponent as Decoration} from "../../assets/Decoration.svg";
 
@@ -31,8 +31,8 @@ function Form() {
                         </div>
                     </div>
                 </div>
-
             </section>
+            <FormHero/>
             <section className={style.Form__important}>
                 <h2>Ważne!</h2>
                 <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>

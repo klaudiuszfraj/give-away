@@ -1,22 +1,2 @@
-@import "../../scss/main.scss";
 
 
-
-
-.Form__important{
-  height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: $color-yellow;
-  padding: 0 2%;
-  h2{
-    font-weight: bold;
-    font-size: 32px;
-  }
-  p{
-    color: $color-dark-gray;
-    font-size: 18px;
-  }
-}

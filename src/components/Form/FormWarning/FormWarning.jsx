@@ -1,10 +1,13 @@
 import React from 'react';
 import style from './FormWarning.module.scss'
+
+
 function FormWarning() {
  return (
-  <div>
-   <h1>warning</h1>
-  </div>
+     <section className={style.Form__important}>
+         <h2>Ważne!</h2>
+         <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
+     </section>
  );
 }
 export default FormWarning;

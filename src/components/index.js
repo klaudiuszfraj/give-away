@@ -13,6 +13,7 @@ export { default as WhoWeHelp } from './Home/WhoWeHelp/WhoWeHelp';
 export { default as Contact } from './Home/Contact/Contact';
 export { default as Footer } from './Home/Footer/Footer';
 
-export { default as FormHero } from './Form/FormHero/FormHero'
-export { default as FormWarning } from './Form/FormWarning/FormWarning'
+export { default as FormHero } from './Form/FormHero/FormHero';
+export { default as FormWarning } from './Form/FormWarning/FormWarning';
+export { default as FormSection } from './Form/FormSection/FormSection';
 

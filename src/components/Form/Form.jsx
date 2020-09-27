@@ -1,16 +1,12 @@
 import React from 'react';
-import {Contact, Footer, FormHero, FormWarning} from "../index";
+import {Contact, Footer, FormHero, FormSection, FormWarning} from "../index";
 
 function Form() {
     return (
         <>
             <FormHero/>
             <FormWarning/>
-
-            <section>
-                <h1>form</h1>
-            </section>
-
+            <FormSection/>
             <Contact/>
             <Footer/>
         </>

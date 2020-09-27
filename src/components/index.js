@@ -14,4 +14,5 @@ export { default as Contact } from './Home/Contact/Contact';
 export { default as Footer } from './Home/Footer/Footer';
 
 export { default as FormHero } from './Form/FormHero/FormHero'
+export { default as FormWarning } from './Form/FormWarning/FormWarning'
 

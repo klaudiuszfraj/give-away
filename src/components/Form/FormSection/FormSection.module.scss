@@ -22,31 +22,6 @@
       margin-top: 60px;
       font-size: 36px;
     }
-    div{
-      margin: 50px 0;
-      label{
-        font-size: 24px;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-      }
-      input[type=checkbox]{
-        display: none;
-        & + label::after{
-          opacity: 1;
-          content: "";
-          display: block;
-          width: 24px;
-          height: 24px;
-          border: .75px solid $color-dark-gray;
-          margin: 0 15px;
-        }
-        &:checked + label::after{
-          background-color: $color-yellow;
-        }
-      }
-
-    }
     button{
       font-family: $font-base;
       font-size: 24px;

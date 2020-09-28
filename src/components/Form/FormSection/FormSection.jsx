@@ -5,6 +5,7 @@ import {submitStep} from "../../../actions";
 import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
+import Step4 from "./Steps/Step4";
 
 function FormSection({form, submitStep}) {
     const [currentStep, setCurrentStep] = useState(1)
@@ -31,6 +32,8 @@ function FormSection({form, submitStep}) {
                 return <Step2 form={form}/>
             case 3:
                 return <Step3 form={form}/>
+            case 4:
+                return <Step4 form={form}/>
             default:
                 return <Step1 form={form}/>
         }

@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {submitStep} from "../../../actions";
 import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
+import Step3 from "./Steps/Step3";
 
 function FormSection({form, submitStep}) {
     const [currentStep, setCurrentStep] = useState(1)
@@ -28,7 +29,8 @@ function FormSection({form, submitStep}) {
                 <h4>Krok {currentStep}/4</h4>
                 <form action="#">
                     {/*<Step1 form={form}/>*/}
-                    <Step2 form={form}/>
+                    {/*<Step2 form={form}/>*/}
+                    <Step3 form={form}/>
 
                     <div className={style.buttons}>
                         <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>

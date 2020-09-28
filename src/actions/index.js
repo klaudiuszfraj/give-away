@@ -78,3 +78,17 @@ export const foundationList = (foundation)=>{
 
     }
 }
+export const submitStep = step => {
+    console.log('submitStep', step);
+    return {
+        type: 'SUBMITSTEP',
+        payload: step
+    }
+}
+export const updateStep = step => {
+    console.log('updateStep', step);
+    return {
+        type: 'UPDATESTEP',
+        payload: step
+    }
+}

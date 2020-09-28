@@ -3,7 +3,8 @@ const form = (state = {
     clothesToTrash: false,
     toys: false,
     books: false,
-    different: false
+    different: false,
+    trashBagsAmount: 3
 }, action) => {
     switch (action.type) {
         case 'SUBMITSTEP':

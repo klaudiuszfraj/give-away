@@ -4,7 +4,14 @@ const form = (state = {
     toys: false,
     books: false,
     different: false,
-    trashBagsAmount: 3
+    trashBagsAmount: 3,
+    localization: 'krakow',
+    kids: false,
+    singleMothers: false,
+    homeless: false,
+    disabled: false,
+    elderly: false,
+    userOrganization: ''
 }, action) => {
     switch (action.type) {
         case 'SUBMITSTEP':

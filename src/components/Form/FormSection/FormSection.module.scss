@@ -22,15 +22,20 @@
       margin-top: 60px;
       font-size: 36px;
     }
-    button{
-      font-family: $font-base;
-      font-size: 24px;
-      font-weight: lighter;
-      border: .75px solid $color-dark-gray;
-      padding: 10px 45px;
-      outline: none;
-      &:active{
-        background-color: $color-yellow;
+    .buttons{
+      button{
+        font-family: $font-base;
+        font-size: 24px;
+        font-weight: lighter;
+        border: .75px solid $color-dark-gray;
+        padding: 10px 45px;
+        outline: none;
+        &:first-child{
+          margin-right: 15px;
+        }
+        &:active{
+          background-color: $color-yellow;
+        }
       }
     }
   }

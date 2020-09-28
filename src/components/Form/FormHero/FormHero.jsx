@@ -16,7 +16,7 @@ function FormHero() {
 
                 <div className={style.hero__boxes}>
                     {steps.map((step, index) => (
-                        <div>
+                        <div key={index}>
                             <p>{index + 1}</p>
                             <p>{step}</p>
                         </div>

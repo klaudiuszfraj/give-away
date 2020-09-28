@@ -11,7 +11,16 @@ const form = (state = {
     homeless: false,
     disabled: false,
     elderly: false,
-    userOrganization: ''
+    userOrganization: '',
+
+    street: '',
+    city: '',
+    postcode: '',
+    mobile: '',
+
+    date: '',
+    hour: '',
+    messageForCourier: ''
 }, action) => {
     switch (action.type) {
         case 'SUBMITSTEP':

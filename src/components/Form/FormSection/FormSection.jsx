@@ -23,14 +23,25 @@ function FormSection({form, submitStep}) {
         })
     }
 
+    const renderStep = (step) => {
+        switch (step) {
+            case 1:
+                return <Step1 form={form}/>
+            case 2:
+                return <Step2 form={form}/>
+            case 3:
+                return <Step3 form={form}/>
+            default:
+                return <Step1 form={form}/>
+        }
+    }
+
     return (
         <section className={style.FormSection}>
             <div className={style.FormSection__container}>
                 <h4>Krok {currentStep}/4</h4>
                 <form action="#">
-                    {/*<Step1 form={form}/>*/}
-                    {/*<Step2 form={form}/>*/}
-                    <Step3 form={form}/>
+                    {renderStep(currentStep)}
 
                     <div className={style.buttons}>
                         <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>

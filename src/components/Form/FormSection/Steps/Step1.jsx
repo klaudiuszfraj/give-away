@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Steps.module.scss'
 import {updateStep} from "../../../../actions";
 import {connect} from "react-redux";
 
@@ -13,7 +14,7 @@ function Step1({form: {clothesToUse, clothesToTrash, toys, books, different}, up
         })
     };
     return (
-        <>
+        <div className={style.steps}>
             <h2>Zaznacz co chcesz oddać:</h2>
             <div>
                 <input type="checkbox" name={'clothesToUse'} id={'clothesToUse'} value={clothesToUse}
@@ -40,7 +41,7 @@ function Step1({form: {clothesToUse, clothesToTrash, toys, books, different}, up
                        checked={different} onClick={handleInputs}/>
                 <label htmlFor="different">inne</label>
             </div>
-        </>
+        </div>
     );
 }
 const mapDispatchToProps = dispatch => {

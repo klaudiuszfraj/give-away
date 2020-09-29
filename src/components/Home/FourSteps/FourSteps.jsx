@@ -47,7 +47,7 @@ function FourSteps() {
                 {items.map(item=>(<StepItem key={item.id} {...item}/> ))}
             </div>
             <div className={style.link}>
-                <Link to={'/logowanie'}>Oddaj rzeczy</Link>
+                <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
             </div>
         </section>
     );

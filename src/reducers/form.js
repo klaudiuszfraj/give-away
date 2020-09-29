@@ -12,14 +12,12 @@ const form = (state = {
     disabled: false,
     elderly: false,
     userOrganization: '',
-
     street: '',
     city: '',
     postcode: '',
     mobile: '',
 
-    date: '',
-    hour: '',
+    date: new Date(),
     messageForCourier: ''
 }, action) => {
     switch (action.type) {

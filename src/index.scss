@@ -1,6 +1,10 @@
 @import "scss/reset";
 @import "scss/main";
 
+
+*{
+  box-sizing: border-box;
+}
 body{
   box-sizing: border-box;
   font-family: $font-base;

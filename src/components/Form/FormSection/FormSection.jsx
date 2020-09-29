@@ -8,7 +8,7 @@ import Step3 from "./Steps/Step3";
 import Step4 from "./Steps/Step4";
 
 function FormSection({form, submitStep}) {
-    const [currentStep, setCurrentStep] = useState(1)
+    const [currentStep, setCurrentStep] = useState(4)
 
     const handleSubmit = (e) => {
         e.preventDefault();

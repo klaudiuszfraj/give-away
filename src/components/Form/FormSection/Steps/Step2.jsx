@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Steps.module.scss'
 import {updateStep} from "../../../../actions";
 import {connect} from "react-redux";
+import classNames from 'classnames';
 
 function Step2({form: { trashBagsAmount }, updateStep}) {
     const handleSelect = (event) => {
@@ -15,7 +16,7 @@ function Step2({form: { trashBagsAmount }, updateStep}) {
     };
     console.log(trashBagsAmount);
     return (
-        <div className={style.steps}>
+        <div className={classNames(style.steps, style.step2)}>
             <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
             <div className={style.step2}>
                 <p>Liczba worków 60L:</p>

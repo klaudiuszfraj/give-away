@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Steps.module.scss'
 import {updateStep} from "../../../../actions";
 import {connect} from "react-redux";
+import classNames from 'classnames';
 
 function Step1({form: {clothesToUse, clothesToTrash, toys, books, different}, updateStep}) {
     const handleInputs = (event) => {
@@ -14,7 +15,7 @@ function Step1({form: {clothesToUse, clothesToTrash, toys, books, different}, up
         })
     };
     return (
-        <div className={style.steps}>
+        <div className={classNames(style.steps)}>
             <h2>Zaznacz co chcesz oddać:</h2>
             <div>
                 <input type="checkbox" name={'clothesToUse'} id={'clothesToUse'} value={clothesToUse}

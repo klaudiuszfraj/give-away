@@ -6,9 +6,10 @@ import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import Step4 from "./Steps/Step4";
+import Summary from "./Steps/Summary";
 
 function FormSection({form, submitStep}) {
-    const [currentStep, setCurrentStep] = useState(4)
+    const [currentStep, setCurrentStep] = useState(5)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +18,7 @@ function FormSection({form, submitStep}) {
 
         setCurrentStep(prevState => {
             if (currentPage === 'nextPage'){
-                return prevState === 4 ? 4 : prevState + 1;
+                return prevState === 5 ? 5 : prevState + 1;
             }else {
                 return prevState === 1 ? 1 : prevState - 1;
             }
@@ -34,6 +35,8 @@ function FormSection({form, submitStep}) {
                 return <Step3 form={form}/>
             case 4:
                 return <Step4 form={form}/>
+            case 5:
+                return <Summary form={form}/>
             default:
                 return <Step1 form={form}/>
         }

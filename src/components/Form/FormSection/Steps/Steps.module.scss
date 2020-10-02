@@ -111,14 +111,19 @@
     p:first-child{
       font-size: 24px;
       margin: 15px 0;
+      width: 120px;
+      &.title{
+        width: 100%;
+      }
     }
+
     .adress__sec{
       margin-top: 30px;
       display: flex;
       align-items: flex-start;
       &>div{
-        width: 270px;
-        margin-right: 30px;
+        width: 300px;
+        margin-right: 60px;
         &>div{
           display: flex;
           align-items: center;

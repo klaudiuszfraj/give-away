@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from './Steps.module.scss'
 import {updateStep} from "../../../../actions";
 import {connect} from "react-redux";

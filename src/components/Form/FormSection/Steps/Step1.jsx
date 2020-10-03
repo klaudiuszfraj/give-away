@@ -9,10 +9,23 @@ function Step1({form: {clothesToUse, clothesToTrash, toys, books, different}, up
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-
+        console.log(target);
         updateStep({
-            [name]: value
+            // [name]: value,
+            [name]: {
+                name: name,
+                isChecked: value,
+                desc: target.nextSibling.innerText
+            }
         })
+
+        const step1 = {
+            name: 'clothesToUse',
+            isChecked: true,
+            desc: 'ubrania, które nadają się do ponownego użycia'
+        }
+
+
     };
     return (
         <div className={classNames(style.steps)}>

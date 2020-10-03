@@ -14,7 +14,6 @@ function Step2({form: { trashBagsAmount }, updateStep}) {
             [name]: value
         })
     };
-    console.log(trashBagsAmount);
     return (
         <div className={classNames(style.steps, style.step2)}>
             <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>

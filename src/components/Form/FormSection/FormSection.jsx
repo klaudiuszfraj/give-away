@@ -9,7 +9,7 @@ import Step4 from "./Steps/Step4";
 import Summary from "./Steps/Summary";
 
 function FormSection({form, submitStep}) {
-    const [currentStep, setCurrentStep] = useState(5)
+    const [currentStep, setCurrentStep] = useState(1)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,6 +40,29 @@ function FormSection({form, submitStep}) {
             default:
                 return <Step1 form={form}/>
         }
+    };
+    const renderButtons = step => {
+        switch (step){
+            case 1:
+                return <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Dalej</button>
+            case 2:
+            case 3:
+            return <>
+                <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
+                <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Dalej</button>
+            </>
+            case 4:
+                return <>
+                    <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
+                    <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Posdumowanie</button>
+                    </>
+            case 5:
+                return <>
+                    <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
+                    <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Potwierdzam</button>
+                    </>
+        }
+
     }
 
     return (
@@ -50,8 +73,7 @@ function FormSection({form, submitStep}) {
                     {renderStep(currentStep)}
 
                     <div className={style.buttons}>
-                        <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
-                        <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Dalej</button>
+                        {renderButtons(currentStep)}
                     </div>
                 </form>
             </div>

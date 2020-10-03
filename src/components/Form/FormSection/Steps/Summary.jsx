@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Steps.module.scss'
+import classNames from "classnames";
 
 
 function Summary({
@@ -35,7 +36,7 @@ function Summary({
         ];
     const checkedItemsList = itemsList.filter(value => Object.keys(value).length !== 0);
     const renderItemsList = checkedItemsList.map(item => (
-        <li>{item.desc}</li>
+        <li key={item.name}>{item.desc}</li>
     ))
 
     const timeToString = ('0' + date.getHours()).slice(-2) + ':'
@@ -46,14 +47,14 @@ function Summary({
         + date.getFullYear();
 
     return (
-        <div className={style.summary}>
+        <div className={classNames(style.steps, style.summary)}>
             <h2>Podsumowanie Twojej darowizny</h2>
             <div className={style.container}>
                 <div className={style.giveaway}>
                     <p>Oddajesz:</p>
                     <div>
                         {/*todo:: render items*/}
-                        <p>{trashBagsAmount} worki, {renderItemsList} </p>
+                        <p className={style.items}>{trashBagsAmount} worki z: {renderItemsList} </p>
                         <p className={style.localization}>dla lokalizacji: {localization}</p>
                     </div>
                 </div>
@@ -90,7 +91,7 @@ function Summary({
                         <div>
                             {/*todo:: space-between*/}
                             <p>Uwagi dla kuriera</p>
-                            <p>{messageForCourier}</p>
+                            <p className={style.message}>{messageForCourier}</p>
                         </div>
                     </div>
                 </div>

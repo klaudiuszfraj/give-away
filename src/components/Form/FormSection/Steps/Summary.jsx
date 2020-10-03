@@ -34,17 +34,12 @@ function Summary({
         different,
     };
 
-    const dateToString = {
-        day: date.getDate(),
-        month: date.getMonth().length < 1 ? 0 + date.getMonth() : date.getMonth(),
-        year: date.getFullYear()
-    }
-    console.log(dateToString)
+    const timeToString = ('0' + date.getHours()).slice(-2) + ':'
+        + ('0' + (date.getMinutes())).slice(-2);
 
     const myDateString = ('0' + date.getDate()).slice(-2) + '/'
         + ('0' + (date.getMonth()+1)).slice(-2) + '/'
         + date.getFullYear();
-    console.log(myDateString);
 
     return (
         <div className={style.summary}>
@@ -86,7 +81,7 @@ function Summary({
                         </div>
                         <div>
                             <p>Godzina</p>
-                            <p>{`${date.getHours()}:${date.getMinutes()}`}</p>
+                            <p>{`${timeToString}`}</p>
                         </div>
                         <div>
                             {/*todo:: space-between*/}

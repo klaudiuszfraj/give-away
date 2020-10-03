@@ -96,6 +96,9 @@
 .summary{
   display: flex;
   flex-direction: column;
+  div{
+    margin: 0;
+  }
   h2{
     font-size: 36px;
     font-weight: bold;
@@ -108,10 +111,18 @@
     .localization{
       text-transform: capitalize;
     }
+    .items{
+      width: 100%;
+      li{
+        font-size: 18px;
+        &:first-child{
+          margin-top: 15px;
+        }
+      }
+    }
     p:first-child{
       font-size: 24px;
       margin: 15px 0;
-      width: 120px;
       &.title{
         width: 100%;
       }
@@ -128,6 +139,9 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
+        }
+        .message{
+          text-align: end;
         }
       }
     }

@@ -26,13 +26,17 @@ function Summary({
                      }
                  }) {
     //todo:: repalce in redux
-    const renderItems = {
-        clothesToUse,
-        clothesToTrash,
-        toys,
-        books,
-        different,
-    };
+    const itemsList = [
+        {...clothesToUse},
+        {...clothesToTrash},
+        {...toys},
+        {...books},
+        {...different}
+        ];
+    const checkedItemsList = itemsList.filter(value => Object.keys(value).length !== 0);
+    const renderItemsList = checkedItemsList.map(item => (
+        <li>{item.desc}</li>
+    ))
 
     const timeToString = ('0' + date.getHours()).slice(-2) + ':'
         + ('0' + (date.getMinutes())).slice(-2);
@@ -49,7 +53,7 @@ function Summary({
                     <p>Oddajesz:</p>
                     <div>
                         {/*todo:: render items*/}
-                        <p>{trashBagsAmount} worki, </p>
+                        <p>{trashBagsAmount} worki, {renderItemsList} </p>
                         <p className={style.localization}>dla lokalizacji: {localization}</p>
                     </div>
                 </div>

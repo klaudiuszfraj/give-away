@@ -7,6 +7,9 @@ import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import Step4 from "./Steps/Step4";
 import Summary from "./Steps/Summary";
+import ThankYou from "./Steps/ThankYou";
+
+//todo:: ecport index
 
 function FormSection({form, submitStep}) {
     const [currentStep, setCurrentStep] = useState(1)
@@ -18,7 +21,7 @@ function FormSection({form, submitStep}) {
 
         setCurrentStep(prevState => {
             if (currentPage === 'nextPage'){
-                return prevState === 5 ? 5 : prevState + 1;
+                return prevState === 6 ? 6 : prevState + 1;
             }else {
                 return prevState === 1 ? 1 : prevState - 1;
             }
@@ -37,6 +40,8 @@ function FormSection({form, submitStep}) {
                 return <Step4 form={form}/>
             case 5:
                 return <Summary form={form}/>
+            case 6:
+                return <ThankYou/>
             default:
                 return <Step1 form={form}/>
         }
@@ -62,10 +67,7 @@ function FormSection({form, submitStep}) {
                     <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Potwierdzam</button>
                     </>
             default:
-                return <>
-                    <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
-                    <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Dalej</button>
-                </>
+                return null
         }
 
     }

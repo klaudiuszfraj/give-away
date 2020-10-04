@@ -75,7 +75,7 @@ function FormSection({form, submitStep}) {
     return (
         <section className={style.FormSection}>
             <div className={style.FormSection__container}>
-                <h4>Krok {currentStep}/4</h4>
+                <h4>Krok {currentStep}/6</h4>
                 <form action="#">
                     {renderStep(currentStep)}
 

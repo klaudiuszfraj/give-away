@@ -107,16 +107,41 @@
   .container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: $color-dark-gray;
     .localization{
       text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      &::before{
+        content: '';
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        background-image: url("../../../../assets/Icon-4.svg");
+        background-size: cover;
+        margin-right: 15px;
+      }
     }
     .items{
       width: 100%;
+      display: flex;
+      align-items: center;
+      &::before{
+        content: '';
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        background-image: url("../../../../assets/Icon-1.svg");
+        background-size: cover;
+        margin-right: 15px;
+
+      }
       li{
         font-size: 18px;
+        list-style-type: none;
         &:first-child{
-          margin-top: 15px;
+          margin-left: 15px;
         }
       }
     }

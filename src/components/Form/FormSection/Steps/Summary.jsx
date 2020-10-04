@@ -36,7 +36,7 @@ function Summary({
         ];
     const checkedItemsList = itemsList.filter(value => Object.keys(value).length !== 0);
     const renderItemsList = checkedItemsList.map(item => (
-        <li key={item.name}>{item.desc}</li>
+        <li key={item.name}>{`${item.desc}, `}</li>
     ))
 
     const timeToString = ('0' + date.getHours()).slice(-2) + ':'

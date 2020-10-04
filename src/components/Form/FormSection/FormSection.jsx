@@ -61,6 +61,11 @@ function FormSection({form, submitStep}) {
                     <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
                     <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Potwierdzam</button>
                     </>
+            default:
+                return <>
+                    <button id={'prevPage'} onClick={(e) => handleSubmit(e)}>Wstecz</button>
+                    <button id={'nextPage'} onClick={(e) => handleSubmit(e)}>Dalej</button>
+                </>
         }
 
     }

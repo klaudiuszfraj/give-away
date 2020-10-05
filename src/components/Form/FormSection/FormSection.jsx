@@ -2,14 +2,8 @@ import React, {useState} from 'react';
 import style from './FormSection.module.scss';
 import {connect} from "react-redux";
 import {submitStep} from "../../../actions";
-import Step1 from "./Steps/Step1";
-import Step2 from "./Steps/Step2";
-import Step3 from "./Steps/Step3";
-import Step4 from "./Steps/Step4";
-import Summary from "./Steps/Summary";
-import ThankYou from "./Steps/ThankYou";
+import { Step1, Step2, Step3, Step4, Summary, ThankYou } from './Steps'
 
-//todo:: ecport index
 
 function FormSection({form, submitStep}) {
     const [currentStep, setCurrentStep] = useState(1)

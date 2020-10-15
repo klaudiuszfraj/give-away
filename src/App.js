@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 function App({ uid }) {
     return (
         <Router>
-            <Header/>
+            {/*<Header/>*/}
             <Switch>
                 <Route exact path={'/'} component={Home}/>
                 <Route path={'/logowanie'} component={Login}/>

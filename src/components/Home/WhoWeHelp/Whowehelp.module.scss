@@ -61,7 +61,7 @@
       margin-top: 30px;
       width: 250px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       button{
         font-family: $font-base;
@@ -72,6 +72,7 @@
         border: none;
         outline: none;
         cursor: pointer;
+        margin: 0 15px;
         &.clicked{
           border: 0.75px solid $color-dark-gray;
         }

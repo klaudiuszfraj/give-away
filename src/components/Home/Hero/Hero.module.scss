@@ -5,6 +5,11 @@
   align-items: center;
   height: 600px;
   margin: -100px 2% 0 0;
+  padding-top: 100px;
+  @media screen and (max-width: 790px){
+    height: auto;
+    justify-content: center;
+  }
 
   .hero__img{
     width: 45%;
@@ -13,6 +18,13 @@
     background-size: cover;
     background-position: right;
     z-index: -1;
+    @media screen and (max-width: 790px){
+      position: relative;
+      height: 600px;
+    }
+    @media screen and (max-width: 500px){
+      display: none;
+    }
   }
   .hero__info{
     display: flex;
@@ -31,6 +43,7 @@
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      flex-wrap: wrap;
       a{
         font-weight: lighter;
         color: $color-dark-gray;
@@ -45,6 +58,7 @@
         cursor: pointer;
         text-transform: uppercase;
         padding: 10px 0;
+        margin: 10px 5px;
       }
     }
   }

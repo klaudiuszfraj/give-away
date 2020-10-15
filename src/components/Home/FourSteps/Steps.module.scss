@@ -18,9 +18,10 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 400px;
+    padding: 90px 0;
     text-align: center;
     align-self: stretch;
+    flex-wrap: wrap;
   }
   .link{
     height: 150px;

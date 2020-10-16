@@ -73,12 +73,12 @@
     nav{
       position: absolute;
       top: 100px;
-      left: 100vw;
+      left: -100vw;
       background-color: $color-white;
       height: 50vh;
       display: flex;
       flex-direction: column;
-      width: 102%;
+      width: 100%;
       align-items: center;
       justify-content: space-evenly;
       z-index: 2;

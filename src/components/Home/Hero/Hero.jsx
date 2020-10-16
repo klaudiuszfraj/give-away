@@ -12,7 +12,7 @@ function Hero() {
             <Decoration/>
             <div className={style.hero__buttons}>
                 <Link to={'/oddaj-rzeczy'}>Oddaj rzeczy</Link>
-                <Link to={'/logowanie'}>Zorganizuj zbiórję</Link>
+                <Link to={'/logowanie'}>Zorganizuj zbiórkę</Link>
             </div>
             </div>
         </section>

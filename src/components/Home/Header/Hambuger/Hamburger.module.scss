@@ -7,7 +7,7 @@
   justify-content: center;
   position: relative;
   .bar{
-    transition: all 3s ease;
+    transition: all 1s ease;
     width: 90%;
     height: 5px;
     background-color: $color-dark-gray;
@@ -22,11 +22,12 @@
     transform: translateY(-10px);
   }
   .bar:nth-child(2){
-    transition: opacity 4s ease;
+    transition: opacity 1s ease;
+    transition-delay: 200ms;
   }
   &[class*='open']{
     .bar:nth-child(2){
-      transition: opacity 1s ease;
+      transition: opacity 500ms ease;
       opacity: 0;
     }
     .bar:first-child{
@@ -35,5 +36,9 @@
     .bar:last-child{
       transform: rotate(-45deg);
     }
+  }
+
+  @media screen and (min-width: 700px) {
+  display: none !important;
   }
 }

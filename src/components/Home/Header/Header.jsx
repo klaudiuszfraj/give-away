@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link as ScrollLink} from 'react-scroll';
 import { Link, useLocation } from 'react-router-dom';
 import style from './Header.module.scss';
 import classNames from 'classnames';
 import { connect } from "react-redux";
+import Hamburger from "./Hambuger/Hamburger";
 
 
-
+//todo:: links to map
+//todo:: reusable btn
 function Header({auth: {uid, email}, profile: {initials, userColor}}) {
+    const [isOpen, setIsOpen] = useState(false);
+
     const userLoggedIn = uid
         ?
         <>
@@ -26,15 +30,15 @@ function Header({auth: {uid, email}, profile: {initials, userColor}}) {
             <div className={classNames({'loggedIn': uid})}>
                 {userLoggedIn}
             </div>
-            <nav>
+            <nav className={classNames({'open': isOpen})}>
                 {currentLocation.pathname === '/'
                     ?
                     <>
-                        <ScrollLink to={'start'} spy={true} smooth={true} duration={1000}>Start</ScrollLink>
-                        <ScrollLink to={'FourSteps'} smooth={true} duration={1000}>O co chodzi?</ScrollLink>
-                        <ScrollLink to={'aboutUs'} smooth={true} duration={1000}>O nas</ScrollLink>
-                        <ScrollLink to={'foundation'} smooth={true} duration={1000}>Fundcja i organizacje</ScrollLink>
-                        <ScrollLink to={'contact'} hashSpy={true} smooth={true} duration={1000}>Kontakt</ScrollLink>
+                        <ScrollLink to={'start'} spy={true} smooth={true} duration={1000} onClick={()=>setIsOpen(prevState => !prevState)}>Start</ScrollLink>
+                        <ScrollLink to={'FourSteps'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>O co chodzi?</ScrollLink>
+                        <ScrollLink to={'aboutUs'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>O nas</ScrollLink>
+                        <ScrollLink to={'foundation'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>Fundcja i organizacje</ScrollLink>
+                        <ScrollLink to={'contact'} hashSpy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>Kontakt</ScrollLink>
                     </>
                     :
                     <>
@@ -42,6 +46,7 @@ function Header({auth: {uid, email}, profile: {initials, userColor}}) {
                     </>
                 }
             </nav>
+            <Hamburger isOpen={isOpen} handleOpen={setIsOpen}/>
         </header>
     );
 }

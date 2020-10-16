@@ -45,8 +45,8 @@ function WhoWeHelp({foundationList}) {
                     <Decoration/>
                     <div className={style.WhoWeHelp__options}>
                         <Option title={'Fundacjom'} onSetItem={setSelectedItem}/>
-                        <Option title={'Organizacją pozarządowym'} onSetItem={setSelectedItem}/>
-                        <Option title={'Lokalnym zbiórką'} onSetItem={setSelectedItem}/>
+                        <Option title={'Organizacjom pozarządowym'} onSetItem={setSelectedItem}/>
+                        <Option title={'Lokalnym zbiórkom'} onSetItem={setSelectedItem}/>
                     </div>
                     <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
                         sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>

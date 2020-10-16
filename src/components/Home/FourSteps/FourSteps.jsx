@@ -27,8 +27,8 @@ function FourSteps() {
         {
             id:3,
             img: scope,
-            header: 'Zdecyduj koumu chesz pomóc',
-            text: 'wybierz zaufan miejsce'
+            header: 'Zdecyduj komu chcesz pomóc',
+            text: 'wybierz zaufane miejsce'
         },
         {
             id:4,

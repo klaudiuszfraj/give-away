@@ -9,6 +9,8 @@ import Hamburger from "./Hambuger/Hamburger";
 
 //todo:: links to map
 //todo:: reusable btn
+//todo:: add ofset to scroll
+//todo:: correct dislay of link to '/'
 function Header({auth: {uid, email}, profile: {initials, userColor}}) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -30,23 +32,23 @@ function Header({auth: {uid, email}, profile: {initials, userColor}}) {
             <div className={classNames({'loggedIn': uid})}>
                 {userLoggedIn}
             </div>
-            <nav className={classNames({'open': isOpen})}>
-                {currentLocation.pathname === '/'
-                    ?
-                    <>
-                        <ScrollLink to={'start'} spy={true} smooth={true} duration={1000} onClick={()=>setIsOpen(prevState => !prevState)}>Start</ScrollLink>
-                        <ScrollLink to={'FourSteps'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>O co chodzi?</ScrollLink>
-                        <ScrollLink to={'aboutUs'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>O nas</ScrollLink>
-                        <ScrollLink to={'foundation'} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>Fundcja i organizacje</ScrollLink>
-                        <ScrollLink to={'contact'} hashSpy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(prevState => !prevState)}>Kontakt</ScrollLink>
-                    </>
-                    :
-                    <>
-                        <Link to={'/'}>X</Link>
-                    </>
-                }
-            </nav>
-            <Hamburger isOpen={isOpen} handleOpen={setIsOpen}/>
+
+            {currentLocation.pathname === '/'
+                ?
+                <>
+                    <nav className={classNames({'open': isOpen})}>
+                        <ScrollLink to={'start'} spy={true} smooth={true} duration={1000} onClick={()=>setIsOpen(false)}>Start</ScrollLink>
+                        <ScrollLink to={'FourSteps'} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>O co chodzi?</ScrollLink>
+                        <ScrollLink to={'aboutUs'} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>O nas</ScrollLink>
+                        <ScrollLink to={'foundation'} spy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>Fundcja i organizacje</ScrollLink>
+                        <ScrollLink to={'contact'} hashSpy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>Kontakt</ScrollLink>
+                    </nav>
+                    <Hamburger isOpen={isOpen} handleOpen={setIsOpen}/>
+                </>
+                :
+                <Link to={'/'}>X</Link>
+            }
+
         </header>
     );
 }

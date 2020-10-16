@@ -68,12 +68,14 @@
           border: 0.75px solid $color-dark-gray;
         }
       }
-      [href='/']{
-        color: $color-dark-gray;
-        text-decoration: none;
-        padding: 5px 14px;
-      }
     }
+  [href='/']{
+    color: $color-dark-gray;
+    text-decoration: none;
+    padding: 5px 14px;
+    border: 0.75px solid $color-dark-gray;
+
+  }
   @media screen and (max-width: 700px) {
     nav{
       position: absolute;

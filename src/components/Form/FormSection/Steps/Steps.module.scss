@@ -1,5 +1,5 @@
 @import "../../../../scss/main";
-
+//todo:: set display for mobile
 .steps {
   h2{
     margin-top: 60px;
@@ -177,8 +177,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 700px;
-  width: 600px;
+  height: 100%;
   font-size: 40px;
   text-align: center;
   svg{

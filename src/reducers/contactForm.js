@@ -6,9 +6,9 @@ const contactForm = (state = {
     switch (action.type) {
         case 'SENDCONTACTFORM':
             return action.payload;
-        // case 'GETFOUNDATIONS_ERROR':
-        //     console.log('REGISTER_ERROR', action.payload);
-        //     return state;
+        case 'SENDCONTACTFORM_ERROR':
+            console.log('SENDCONTACTFORM_ERROR', action.error);
+            return state;
         default:
             return state;
     }

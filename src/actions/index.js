@@ -21,6 +21,8 @@
 //     };
 // };
 
+import {getFirestore} from "redux-firestore";
+
 export const signIn = user => {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
@@ -95,8 +97,12 @@ export const updateStep = step => {
 
 export const sendContactForm = form => {
     console.log('sendContactForm', form);
-    return {
-        type: 'SENDCONTACTFORM',
-        payload: form
+    return (dispatch, getState, {getFirebase, getFirestore}) => {
+        const firestore = getFirestore();
+        firestore.collection('contact-forms').add(form).then(()=>{
+            dispatch({type: 'SENDCONTACTFORM', payload: form})
+        }).catch(error => {
+            dispatch({type: 'SENDCONTACTFORM_ERROR', payload: form, error: error})
+        })
     }
 }

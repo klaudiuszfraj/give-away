@@ -75,7 +75,7 @@ export const foundationList = (foundation)=>{
         firestore.collection("foundations").add({...foundation}).then(()=>{
             dispatch({type: 'GETFOUNDATIONS', payload: foundation});
         }).catch(error=>{
-            dispatch({type: 'GETFOUNDATIONS_ERROR', payload: foundation});
+            dispatch({type: 'GETFOUNDATIONS_ERROR', payload: foundation, error: error});
         })
 
     }

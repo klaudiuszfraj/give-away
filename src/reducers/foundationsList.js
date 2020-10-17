@@ -7,7 +7,7 @@ const foundationList = (state = {
         case 'GETFOUNDATIONS':
             return action.payload;
         case 'GETFOUNDATIONS_ERROR':
-            console.log('REGISTER_ERROR', action.payload);
+            console.log('REGISTER_ERROR', action.error);
             return state;
         default:
             return state;

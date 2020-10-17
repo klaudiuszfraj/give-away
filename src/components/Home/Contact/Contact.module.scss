@@ -119,6 +119,11 @@
         border: 0.75px solid $color-dark-gray;
         outline: none;
         cursor: pointer;
+        transition: background-color 1s ease;
+        &:hover{
+          background-color: $color-white;
+          color: #000;
+        }
       }
     }
   }

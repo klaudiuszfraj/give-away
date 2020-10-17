@@ -36,11 +36,11 @@ function Header({auth: {uid, email}, profile: {initials, userColor}}) {
                 ?
                 <>
                     <nav className={classNames({'open': isOpen})}>
-                        <ScrollLink to={'start'} spy={true} smooth={true} duration={1000} onClick={()=>setIsOpen(false)}>Start</ScrollLink>
+                        <ScrollLink to={'start'} smooth={true} duration={1000} onClick={()=>setIsOpen(false)}>Start</ScrollLink>
                         <ScrollLink to={'FourSteps'} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>O co chodzi?</ScrollLink>
                         <ScrollLink to={'aboutUs'} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>O nas</ScrollLink>
                         <ScrollLink to={'foundation'} spy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>Fundcja i organizacje</ScrollLink>
-                        <ScrollLink to={'contact'} hashSpy={true} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>Kontakt</ScrollLink>
+                        <ScrollLink to={'contact'} smooth={true} duration={1000}  onClick={()=>setIsOpen(false)}>Kontakt</ScrollLink>
                     </nav>
                     <Hamburger isOpen={isOpen} handleOpen={setIsOpen}/>
                 </>

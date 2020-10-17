@@ -13,8 +13,8 @@ function Footer() {
   <footer className={style.footer}>
    <p>Copyright by Coders Lab</p>
       <div className={style.icons}>
-          <Instagram/>
-          <img src={facebook} alt="facebook"/>
+          <a href="https://www.instagram.com/?hl=pl"><Instagram/></a>
+          <a href="https://pl-pl.facebook.com/"><img src={facebook} alt="facebook"/></a>
       </div>
   </footer>
  );

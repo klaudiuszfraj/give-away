@@ -92,3 +92,11 @@ export const updateStep = step => {
         payload: step
     }
 }
+
+export const sendContactForm = form => {
+    console.log('sendContactForm', form);
+    return {
+        type: 'SENDCONTACTFORM',
+        payload: form
+    }
+}

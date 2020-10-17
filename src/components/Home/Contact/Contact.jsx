@@ -3,8 +3,10 @@ import style from './Contact.module.scss';
 import {ReactComponent as Decoration} from '../../../assets/Decoration.svg'
 import {sendForm} from "../../../API";
 import classNames from 'classnames';
+import {sendContactForm} from "../../../actions";
+import {connect} from 'react-redux';
 
-function Contact() {
+function Contact({ sendContactForm }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -41,7 +43,7 @@ function Contact() {
 
         })
         if ((validateName(name)) && (validateEmail(email)) && message.length > 120){
-            sendForm({
+            sendContactForm({
                 name,
                 email,
                 message
@@ -84,5 +86,10 @@ function Contact() {
         </section>
     );
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        sendContactForm: (form)=>dispatch(sendContactForm(form))
+    }
+}
 
-export default Contact;
+export default connect(null, mapDispatchToProps)(Contact);

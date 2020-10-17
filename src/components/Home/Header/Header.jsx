@@ -10,7 +10,6 @@ import Hamburger from "./Hambuger/Hamburger";
 //todo:: links to map
 //todo:: reusable btn
 //todo:: add ofset to scroll
-//todo:: correct dislay of link to '/'
 function Header({auth: {uid, email}, profile: {initials, userColor}}) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -46,7 +45,7 @@ function Header({auth: {uid, email}, profile: {initials, userColor}}) {
                     <Hamburger isOpen={isOpen} handleOpen={setIsOpen}/>
                 </>
                 :
-                <Link to={'/'}>X</Link>
+                <Link to={'/'} />
             }
 
         </header>
